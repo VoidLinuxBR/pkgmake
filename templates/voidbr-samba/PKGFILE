@@ -170,6 +170,9 @@ build() {
 }
 
 package() {
-	cd "$srcdir/$pkgbase-$pkgver"
-	make DESTDIR="$pkgdir" install
+    cd "$srcdir/$pkgbase-$pkgver"
+    make DESTDIR="$pkgdir" install
+    mkdir -p "$pkgdir/etc/profile.d/"
+    echo 'export PATH=/opt/samba/bin:/opt/samba/sbin:$PATH' > "$pkgdir/etc/profile.d/voidbr-samba.sh"
+    chmod +x "$pkgdir/etc/profile.d/voidbr-samba.sh"
 }
