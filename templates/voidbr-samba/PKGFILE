@@ -119,24 +119,17 @@ makedepends=(
 	docbook-xsl
 )
 depends=(
-	python3
-	pythhon3-dnsutils
-	python3-dnsutils
-	python3-dnsutilspython
-	python3-dnsupython
-	python3-dnspython
-	python3-cryptography
-	python3-matplotlib
-	python3-pexpect
-	python3-pyasn1
-	python3-ldb
-	ldb
-	libbsd
-	gnutls
-	libcui18n
-	libicui18n
-	icu
-	avahi
+    python3
+    python3-dnspython
+    python3-cryptography
+    python3-matplotlib
+    python3-pexpect
+    python3-pyasn1
+    ldb
+    libbsd
+    gnutls
+    icu
+    avahi
 )
 
 build() {
