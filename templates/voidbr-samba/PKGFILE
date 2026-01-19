@@ -184,6 +184,10 @@ package() {
 
     {
         echo '#!/bin/sh'
+        echo '# Cria o diretório de destino se não existir'
+        echo '[ -d /var/log/samba-ad-dc ] || mkdir -p /var/log/samba-ad-dc'
+
+        echo '# Executa o svlogd apontando para o diretório de logs'
         echo 'exec svlogd -tt /var/log/samba-ad-dc'
     } > "$pkgdir"/etc/sv/samba-ad-dc//log/run
     chmod +x "$pkgdir"/etc/sv/samba-ad-dc/log/run
