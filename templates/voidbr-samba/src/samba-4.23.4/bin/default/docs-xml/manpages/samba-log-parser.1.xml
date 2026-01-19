@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<refentry id="samba-log-parser.1">
+
+<refmeta>
+	<refentrytitle>samba-log-parser</refentrytitle>
+	<manvolnum>1</manvolnum>
+	<refmiscinfo class="source">Samba</refmiscinfo>
+	<refmiscinfo class="manual">User Commands</refmiscinfo>
+	<refmiscinfo class="version">4.23.4</refmiscinfo>
+</refmeta>
+
+
+<refnamediv>
+	<refname>samba-log-parser</refname>
+	<refpurpose>Samba (winbind) trace parser.</refpurpose>
+</refnamediv>
+options:
+  -h, --help     show this help message and exit
+  --traceid ID   specify the traceid of the trace records
+  --pid PID      specify the pid of winbind client
+  --breakdown    breakdown the traces into per traceid files
+  --merge-by-timestamp   merge logs by timestamp
+  --flow         show the request/sub-request flow traces
+  --flow-compact show the request/sub-request flow traces without dcerpc details
+
+<refsynopsisdiv>
+	<cmdsynopsis sepchar=" ">
+		<literal>samba-log-parser</literal>
+		<arg choice="req" rep="norepeat">path</arg>
+		<arg choice="opt" rep="norepeat">--pid=PID</arg>
+		<arg choice="opt" rep="norepeat">--traceid=ID</arg>
+		<arg choice="opt" rep="norepeat">--breakdown</arg>
+		<arg choice="opt" rep="norepeat">--merge-by-timestamp</arg>
+		<arg choice="opt" rep="norepeat">--flow</arg>
+		<arg choice="opt" rep="norepeat">--flow-compact</arg>
+		<arg choice="opt" rep="norepeat">-h|--help</arg>
+	</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+	<title>DESCRIPTION</title>
+
+	<para>This tool is part of the <citerefentry><refentrytitle>samba</refentrytitle>
+	<manvolnum>7</manvolnum></citerefentry> suite.</para>
+
+	<para>The <literal>samba-log-parser</literal> program parses samba winbind
+	logs.</para>
+</refsect1>
+
+
+<refsect1>
+	<title>OPTIONS</title>
+
+	<para>The following options are available to the <literal>samba-log-parser</literal> program.
+	</para>
+
+	<variablelist>
+		<varlistentry>
+		<term>--pid=PID</term>
+		<listitem><para>Display traces for winbind client with the matching PID.
+		</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--traceid=ID</term>
+		<listitem><para>Display traces with matching traceid debug header field.
+		</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--breakdown</term>
+		<listitem><para>Break down all traces to separate files in the current
+		working directory. For each traceid, three files are created:
+		traceid.full
+		traceid.flow
+		traceid.flowcompact
+		</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--merge-by-timestamp</term>
+		<listitem><para>Sort the trace lines according to the timestamp.
+		Works with log files without traceid header field as well.
+		</para></listitem>
+		</varlistentry>
+
+
+		<varlistentry>
+		<term>--flow</term>
+		<listitem><para>Display the request/sub-request flow.
+		</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--flow-compact</term>
+		<listitem><para>Display the request/sub-request flow without dcerpc
+		call details.
+		</para></listitem>
+		</varlistentry>
+
+	</variablelist>
+</refsect1>
+
+
+<refsect1>
+	<title>EXAMPLES</title>
+
+	<para>Show the flow traces for trace id
+	<parameter moreinfo="none">1234</parameter> from log file log.winbind:
+	</para>
+	<programlisting format="linespecific">
+	# samba-log-parser --traceid 1234 --flow /var/log/samba/log.winbind
+</programlisting>
+
+	<para>Show the full traces for winbind client with PID
+	<parameter moreinfo="none">999999</parameter>
+	sorted using the timestamp for log files found in the samba log directory:
+	</para>
+
+	<programlisting format="linespecific">
+	# samba-log-parser --pid 999999 --merge-by-timestamp /var/log/samba
+</programlisting>
+
+	<para>Break down the traces into separate files according to traceid sorted
+	using the timestamp for log files found in the samba log directory:
+	</para>
+
+	<programlisting format="linespecific">
+	# samba-log-parser --breakdown --merge-by-timestamp /var/log/samba
+</programlisting>
+
+	<para>Sort traces using the timestamp for log files found in the samba log
+	directory. Traces do not need to contain the traceid header field.
+	</para>
+
+	<programlisting format="linespecific">
+	# samba-log-parser --merge-by-timestamp /var/log/samba
+</programlisting>
+</refsect1>
+
+<refsect1>
+	<title>VERSION</title>
+
+	<para>This man page is part of version 4.23.4 of the Samba suite.</para>
+</refsect1>
+
+<refsect1>
+	<title>AUTHOR</title>
+	<para>The original Samba software and related utilities
+	were created by Andrew Tridgell. Samba is now developed
+	by the Samba Team as an Open Source project similar
+	to the way the Linux kernel is developed.</para>
+</refsect1>
+
+</refentry>

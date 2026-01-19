@@ -1,0 +1,39 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/bin/default/source4/lib/tls/tls_tstream.c.1.o: \
+ ../../source4/lib/tls/tls_tstream.c ../../source4/include/includes.h \
+ ../../lib/replace/../replace/replace.h include/config.h \
+ ../../lib/replace/system/time.h ../../lib/replace/system/wait.h \
+ ../../lib/replace/system/locale.h ../../source4/../lib/util/attr.h \
+ ../../source4/../lib/util/debug.h ../../source4/../lib/util/attr.h \
+ ../../source4/../lib/util/samba_util.h ../../lib/util/charset/charset.h \
+ ../../lib/util/attr.h ../../lib/util/time.h ../../lib/util/data_blob.h \
+ ../../lib/util/byteorder.h ../../lib/util/bytearray.h \
+ ../../lib/util/talloc_stack.h ../../lib/util/talloc_keep_secret.h \
+ ../../lib/util/memory.h ../../lib/util/discard.h \
+ ../../source4/../lib/util/fault.h ../../lib/util/util.h \
+ ../../lib/util/signal.h ../../lib/util/genrand.h \
+ ../../source4/../lib/util/substitute.h \
+ ../../source4/../lib/util/util_strlist.h \
+ ../../source4/../lib/util/blocking.h \
+ ../../source4/../lib/util/become_daemon.h ../../libcli/util/error.h \
+ ../../libcli/util/werror.h libcli/util/werror_gen.h \
+ ../../libcli/util/doserr.h ../../libcli/util/ntstatus.h \
+ libcli/util/ntstatus_gen.h libcli/util/hresult.h \
+ ../../source4/../lib/util/safe_string.h \
+ ../../source4/../lib/util/setid.h ../../lib/replace/system/network.h \
+ ../../lib/replace/system/filesys.h ../../lib/util/dlinklist.h \
+ ../../lib/util/time_basic.h ../../lib/util/util_file.h \
+ ../../lib/replace/replace.h ../../lib/util/tevent_ntstatus.h \
+ ../../source4/../libcli/util/ntstatus.h ../../lib/tevent/tevent.h \
+ ../../lib/replace/../util/tevent_unix.h \
+ ../../source4/../lib/tsocket/tsocket.h \
+ ../../source4/../lib/tsocket/tsocket_internal.h \
+ ../../source4/../lib/util/util_net.h ../../source4/lib/tls/tls.h \
+ ../../source4/lib/socket/socket.h ../../lib/param/param.h \
+ lib/param/param_proto.h lib/param/param_functions.h \
+ ../../lib/crypto/gnutls_helpers.h \
+ ../../third_party/quic/libquic/netinet/quic.h \
+ ../../third_party/quic/modules/include/uapi/linux/quic.h \
+ ../../third_party/ngtcp2/lib/includes/ngtcp2/ngtcp2.h \
+ third_party/ngtcp2/lib/includes/ngtcp2/version.h \
+ ../../third_party/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto.h \
+ ../../third_party/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_gnutls.h

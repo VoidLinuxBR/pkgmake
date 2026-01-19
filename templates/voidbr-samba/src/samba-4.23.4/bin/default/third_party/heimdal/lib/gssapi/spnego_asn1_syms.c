@@ -1,0 +1,7 @@
+ASN1_SYM_TYPE("MechTypeList", "MechTypeList", MechTypeList)
+ASN1_SYM_TYPE("NegHints", "NegHints", NegHints)
+ASN1_SYM_TYPE("NegTokenInit2", "NegTokenInit2", NegTokenInit2)
+ASN1_SYM_TYPE("NegTokenInit", "NegTokenInit", NegTokenInit)
+ASN1_SYM_TYPE("NegTokenResp", "NegTokenResp", NegTokenResp)
+ASN1_SYM_TYPE("NegotiationToken", "NegotiationToken", NegotiationToken)
+ASN1_SYM_TYPE("NegotiationToken2", "NegotiationToken2", NegotiationToken2)

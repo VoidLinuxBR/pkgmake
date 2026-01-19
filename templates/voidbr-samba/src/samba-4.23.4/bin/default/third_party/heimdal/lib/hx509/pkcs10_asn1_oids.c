@@ -1,0 +1,1 @@
+DEFINE_OID_WITH_NAME(id_pkcs9_extReq_copy)

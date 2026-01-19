@@ -1,0 +1,3 @@
+DEFINE_OID_WITH_NAME(id_pkix_ocsp)
+DEFINE_OID_WITH_NAME(id_pkix_ocsp_basic)
+DEFINE_OID_WITH_NAME(id_pkix_ocsp_nonce)

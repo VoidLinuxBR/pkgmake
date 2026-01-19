@@ -1,0 +1,589 @@
+{"imports":"krb5"}
+{"name":"hdb_db_format","gen_name":"hdb_db_format","type":"INTEGER","constant":true,"exported":true,"value":2}
+{"name":"hdb-pw-salt","gen_name":"hdb_pw_salt","type":"INTEGER","constant":true,"exported":true,"value":3}
+{"name":"hdb-afs3-salt","gen_name":"hdb_afs3_salt","type":"INTEGER","constant":true,"exported":true,"value":10}
+{"name":"HDBFlags","gen_name":"HDBFlags","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDBFlags","gen_name":"HDBFlags","is_type":true,"exported":false,"typedef":true,"ttype":"BIT STRING","ctype":"struct HDBFlags","members":[
+{"name":"HDBFlags","gen_name":"initial:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"forwardable:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"proxiable:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"renewable:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"postdate:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"server:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"client:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"invalid:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"require_preauth:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"change_pw:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"require_hwauth:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"ok_as_delegate:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"user_to_user:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"immutable:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"trusted_for_delegation:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"allow_kerberos4:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"allow_digest:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"locked_out:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"require_pwchange:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"materialize:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"virtual_keys:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"virtual:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"synthetic:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"no_auth_data_reqd:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"auth_data_reqd:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"_unused25:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"_unused26:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"_unused27:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"_unused28:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"_unused29:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"force_canonicalize:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDBFlags","gen_name":"do_not_store:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+]}
+}
+{"name":"HDB_Ext_Lan_Manager_OWF","gen_name":"HDB_Ext_Lan_Manager_OWF","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Lan_Manager_OWF","gen_name":"HDB_Ext_Lan_Manager_OWF","is_type":true,"exported":false,"typedef":true,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+{"name":"KeyRotationFlags","gen_name":"KeyRotationFlags","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotationFlags","gen_name":"KeyRotationFlags","is_type":true,"exported":false,"typedef":true,"ttype":"BIT STRING","ctype":"struct KeyRotationFlags","members":[
+{"name":"KeyRotationFlags","gen_name":"deleted:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"parent:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused2:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused3:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused4:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused5:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused6:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused7:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused8:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused9:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused10:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused11:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused12:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused13:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused14:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused15:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused16:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused17:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused18:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused19:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused20:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused21:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused22:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused23:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused24:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused25:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused26:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused27:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused28:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused29:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused30:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"KeyRotationFlags","gen_name":"_unused31:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+]}
+}
+{"module":"HDB","tagging":"explicit","objid":[]}
+{"name":"Salt","gen_name":"Salt","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"Salt","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct Salt","members":[
+{"name":"type","gen_name":"type","optional":false,"type":{"name":"Salt","gen_name":"type","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"type","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"type","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"salt","gen_name":"salt","optional":false,"type":{"name":"Salt","gen_name":"salt","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"salt","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"salt","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"opaque","gen_name":"opaque","optional":true,"defval":null,"type":{"name":"Salt","gen_name":"*opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"*opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Salt","gen_name":"*opaque","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"Key","gen_name":"Key","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Key","gen_name":"Key","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct Key","members":[
+{"name":"mkvno","gen_name":"mkvno","optional":true,"defval":null,"type":{"name":"Key","gen_name":"*mkvno","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Key","gen_name":"*mkvno","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Key","gen_name":"*mkvno","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"key","gen_name":"key","optional":false,"type":{"name":"Key","gen_name":"key","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Key","gen_name":"key","is_type":true,"exported":true,"typedef":false,"ttype":"EncryptionKey","alias":true
+}
+}
+},{"name":"salt","gen_name":"salt","optional":true,"defval":null,"type":{"name":"Key","gen_name":"*salt","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Key","gen_name":"*salt","is_type":true,"exported":true,"typedef":false,"ttype":"Salt","alias":true
+}
+}
+}]}
+}
+{"name":"Event","gen_name":"Event","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Event","gen_name":"Event","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct Event","members":[
+{"name":"time","gen_name":"time","optional":false,"type":{"name":"Event","gen_name":"time","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Event","gen_name":"time","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+},{"name":"principal","gen_name":"principal","optional":true,"defval":null,"type":{"name":"Event","gen_name":"*principal","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Event","gen_name":"*principal","is_type":true,"exported":true,"typedef":false,"ttype":"Principal","alias":true
+}
+}
+}]}
+}
+{"name":"GENERATION","gen_name":"GENERATION","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"GENERATION","gen_name":"GENERATION","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct GENERATION","members":[
+{"name":"time","gen_name":"time","optional":false,"type":{"name":"GENERATION","gen_name":"time","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"GENERATION","gen_name":"time","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+},{"name":"usec","gen_name":"usec","optional":false,"type":{"name":"GENERATION","gen_name":"usec","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"GENERATION","gen_name":"usec","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"GENERATION","gen_name":"usec","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"gen","gen_name":"gen","optional":false,"type":{"name":"GENERATION","gen_name":"gen","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"GENERATION","gen_name":"gen","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"GENERATION","gen_name":"gen","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+}]}
+}
+{"name":"HDB_Ext_PKINIT_acl","gen_name":"HDB_Ext_PKINIT_acl","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl","gen_name":"HDB_Ext_PKINIT_acl","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_PKINIT_acl","members":[{"name":"HDB_Ext_PKINIT_acl","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_PKINIT_acl","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_Ext_PKINIT_acl_val","members":[
+{"name":"subject","gen_name":"subject","optional":false,"type":{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"subject","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"subject","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"subject","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"issuer","gen_name":"issuer","optional":true,"defval":null,"type":{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"*issuer","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"*issuer","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"*issuer","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"anchor","gen_name":"anchor","optional":true,"defval":null,"type":{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"*anchor","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"*anchor","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_acl_val","gen_name":"*anchor","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+}]}
+}
+]}
+}
+{"name":"HDB_Ext_PKINIT_hash","gen_name":"HDB_Ext_PKINIT_hash","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_hash","gen_name":"HDB_Ext_PKINIT_hash","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_PKINIT_hash","members":[{"name":"HDB_Ext_PKINIT_hash","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_PKINIT_hash","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_hash","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_Ext_PKINIT_hash_val","members":[
+{"name":"digest-type","gen_name":"digest_type","optional":false,"type":{"name":"HDB_Ext_PKINIT_hash_val","gen_name":"digest_type","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_hash_val","gen_name":"digest_type","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_hash_val","gen_name":"digest_type","is_type":true,"exported":false,"typedef":false,"ttype":"OBJECT IDENTIFIER","ctype":"heim_oid"}
+}
+}
+},{"name":"digest","gen_name":"digest","optional":false,"type":{"name":"HDB_Ext_PKINIT_hash_val","gen_name":"digest","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_hash_val","gen_name":"digest","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_hash_val","gen_name":"digest","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+]}
+}
+{"name":"HDB_Ext_PKINIT_cert","gen_name":"HDB_Ext_PKINIT_cert","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_cert","gen_name":"HDB_Ext_PKINIT_cert","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_PKINIT_cert","members":[{"name":"HDB_Ext_PKINIT_cert","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_PKINIT_cert","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_cert","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_Ext_PKINIT_cert_val","members":[
+{"name":"cert","gen_name":"cert","optional":false,"type":{"name":"HDB_Ext_PKINIT_cert_val","gen_name":"cert","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_cert_val","gen_name":"cert","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_PKINIT_cert_val","gen_name":"cert","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+]}
+}
+{"name":"HDB_Ext_Constrained_delegation_acl","gen_name":"HDB_Ext_Constrained_delegation_acl","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Constrained_delegation_acl","gen_name":"HDB_Ext_Constrained_delegation_acl","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_Constrained_delegation_acl","members":[{"name":"HDB_Ext_Constrained_delegation_acl","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_Constrained_delegation_acl","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"Principal","alias":true
+}
+]}
+}
+{"name":"HDB_Ext_Password","gen_name":"HDB_Ext_Password","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Password","gen_name":"HDB_Ext_Password","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_Ext_Password","members":[
+{"name":"mkvno","gen_name":"mkvno","optional":true,"defval":null,"type":{"name":"HDB_Ext_Password","gen_name":"*mkvno","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Password","gen_name":"*mkvno","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Password","gen_name":"*mkvno","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"password","gen_name":"password","optional":false,"type":{"name":"HDB_Ext_Password","gen_name":"password","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Password","gen_name":"password","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}]}
+}
+{"name":"HDB_Ext_Aliases","gen_name":"HDB_Ext_Aliases","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Aliases","gen_name":"HDB_Ext_Aliases","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_Ext_Aliases","members":[
+{"name":"case-insensitive","gen_name":"case_insensitive","optional":false,"type":{"name":"HDB_Ext_Aliases","gen_name":"case_insensitive","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Aliases","gen_name":"case_insensitive","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Aliases","gen_name":"case_insensitive","is_type":true,"exported":false,"typedef":false,"ttype":"BOOLEAN","ctype":"unsigned int"}
+}
+}
+},{"name":"aliases","gen_name":"aliases","optional":false,"type":{"name":"HDB_Ext_Aliases","gen_name":"aliases","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Aliases","gen_name":"aliases","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_Aliases","gen_name":"aliases","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_Aliases_aliases","members":[{"name":"HDB_Ext_Aliases_aliases","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_Aliases_aliases","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"Principal","alias":true
+}
+]}
+}
+}
+}]}
+}
+{"name":"Keys","gen_name":"Keys","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"Keys","gen_name":"Keys","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct Keys","members":[{"name":"Keys","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"Keys","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"Key","alias":true
+}
+]}
+}
+{"name":"HDB_keyset","gen_name":"HDB_keyset","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_keyset","gen_name":"HDB_keyset","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":true,"ctype":"struct HDB_keyset","members":[
+{"name":"kvno","gen_name":"kvno","optional":false,"type":{"name":"HDB_keyset","gen_name":"kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_keyset","gen_name":"kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_keyset","gen_name":"kvno","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"keys","gen_name":"keys","optional":false,"type":{"name":"HDB_keyset","gen_name":"keys","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_keyset","gen_name":"keys","is_type":true,"exported":true,"typedef":false,"ttype":"Keys","alias":true
+}
+}
+},{"name":"set-time","gen_name":"set_time","optional":true,"defval":null,"type":{"name":"HDB_keyset","gen_name":"*set_time","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_keyset","gen_name":"*set_time","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+}]}
+}
+{"name":"HDB_Ext_KeySet","gen_name":"HDB_Ext_KeySet","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_KeySet","gen_name":"HDB_Ext_KeySet","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_KeySet","members":[{"name":"HDB_Ext_KeySet","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_KeySet","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_keyset","alias":true
+}
+]}
+}
+{"name":"KeyRotation","gen_name":"KeyRotation","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"KeyRotation","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":true,"ctype":"struct KeyRotation","members":[
+{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"KeyRotation","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"flags","is_type":true,"exported":true,"typedef":false,"ttype":"KeyRotationFlags","alias":true
+}
+}
+},{"name":"epoch","gen_name":"epoch","optional":false,"type":{"name":"KeyRotation","gen_name":"epoch","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"epoch","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+},{"name":"period","gen_name":"period","optional":false,"type":{"name":"KeyRotation","gen_name":"period","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"period","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"period","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"base-kvno","gen_name":"base_kvno","optional":false,"type":{"name":"KeyRotation","gen_name":"base_kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"base_kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"base_kvno","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"base-key-kvno","gen_name":"base_key_kvno","optional":false,"type":{"name":"KeyRotation","gen_name":"base_key_kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"base_key_kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"KeyRotation","gen_name":"base_key_kvno","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+}]}
+}
+{"name":"HDB_Ext_KeyRotation","gen_name":"HDB_Ext_KeyRotation","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_Ext_KeyRotation","gen_name":"HDB_Ext_KeyRotation","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_Ext_KeyRotation","members":[{"name":"HDB_Ext_KeyRotation","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_Ext_KeyRotation","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"KeyRotation","alias":true
+}
+]}
+}
+{"name":"HDB_extension","gen_name":"HDB_extension","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension","gen_name":"HDB_extension","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":true,"ctype":"struct HDB_extension","members":[
+{"name":"mandatory","gen_name":"mandatory","optional":false,"type":{"name":"HDB_extension","gen_name":"mandatory","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension","gen_name":"mandatory","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension","gen_name":"mandatory","is_type":true,"exported":false,"typedef":false,"ttype":"BOOLEAN","ctype":"unsigned int"}
+}
+}
+},{"name":"data","gen_name":"data","optional":false,"type":{"name":"HDB_extension","gen_name":"data","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension","gen_name":"data","is_type":true,"exported":false,"typedef":false,"ttype":"CHOICE","ctype":"struct HDB_extension_data","extensible":true,"members":[
+{"name":"HDB_extension_data","gen_name":"pkinit_acl","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"pkinit_acl","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_PKINIT_acl","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"pkinit_cert_hash","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"pkinit_cert_hash","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_PKINIT_hash","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"allowed_to_delegate_to","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"allowed_to_delegate_to","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_Constrained_delegation_acl","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"lm_owf","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"lm_owf","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_Lan_Manager_OWF","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"password","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"password","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_Password","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"aliases","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"aliases","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_Aliases","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"last_pw_change","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":7,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"last_pw_change","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"pkinit_cert","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":8,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"pkinit_cert","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_PKINIT_cert","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"hist_keys","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":9,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"hist_keys","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_KeySet","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"hist_kvno_diff_clnt","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":10,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"hist_kvno_diff_clnt","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"hist_kvno_diff_clnt","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+,{"name":"HDB_extension_data","gen_name":"hist_kvno_diff_svc","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":11,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"hist_kvno_diff_svc","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"hist_kvno_diff_svc","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+,{"name":"HDB_extension_data","gen_name":"policy","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"policy","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"policy","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+,{"name":"HDB_extension_data","gen_name":"principal_id","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":13,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"principal_id","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"principal_id","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"int64_t"}
+}
+}
+,{"name":"HDB_extension_data","gen_name":"key_rotation","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":14,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"key_rotation","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_Ext_KeyRotation","alias":true
+}
+}
+,{"name":"HDB_extension_data","gen_name":"krb5_config","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":15,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"krb5_config","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extension_data","gen_name":"krb5_config","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+]}
+}
+}]}
+}
+{"name":"HDB_extensions","gen_name":"HDB_extensions","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_extensions","gen_name":"HDB_extensions","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_extensions","members":[{"name":"HDB_extensions","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_extensions","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_extension","alias":true
+}
+]}
+}
+{"name":"HDB_EncTypeList","gen_name":"HDB_EncTypeList","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_EncTypeList","gen_name":"HDB_EncTypeList","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct HDB_EncTypeList","members":[{"name":"HDB_EncTypeList","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"HDB_EncTypeList","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_EncTypeList","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+]}
+}
+{"name":"HDB_entry","gen_name":"HDB_entry","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"HDB_entry","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_entry","members":[
+{"name":"principal","gen_name":"principal","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*principal","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*principal","is_type":true,"exported":true,"typedef":false,"ttype":"Principal","alias":true
+}
+}
+},{"name":"kvno","gen_name":"kvno","optional":false,"type":{"name":"HDB_entry","gen_name":"kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"kvno","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"kvno","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"keys","gen_name":"keys","optional":false,"type":{"name":"HDB_entry","gen_name":"keys","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"keys","is_type":true,"exported":true,"typedef":false,"ttype":"Keys","alias":true
+}
+}
+},{"name":"created-by","gen_name":"created_by","optional":false,"type":{"name":"HDB_entry","gen_name":"created_by","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"created_by","is_type":true,"exported":true,"typedef":false,"ttype":"Event","alias":true
+}
+}
+},{"name":"modified-by","gen_name":"modified_by","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*modified_by","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*modified_by","is_type":true,"exported":true,"typedef":false,"ttype":"Event","alias":true
+}
+}
+},{"name":"valid-start","gen_name":"valid_start","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*valid_start","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*valid_start","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+},{"name":"valid-end","gen_name":"valid_end","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*valid_end","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*valid_end","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+},{"name":"pw-end","gen_name":"pw_end","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*pw_end","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":7,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*pw_end","is_type":true,"exported":true,"typedef":false,"ttype":"KerberosTime","alias":true
+}
+}
+},{"name":"max-life","gen_name":"max_life","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*max_life","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":8,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*max_life","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*max_life","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"int"}
+}
+}
+},{"name":"max-renew","gen_name":"max_renew","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*max_renew","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":9,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*max_renew","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*max_renew","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"int"}
+}
+}
+},{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"HDB_entry","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":10,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"flags","is_type":true,"exported":true,"typedef":false,"ttype":"HDBFlags","alias":true
+}
+}
+},{"name":"etypes","gen_name":"etypes","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*etypes","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":11,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*etypes","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_EncTypeList","alias":true
+}
+}
+},{"name":"generation","gen_name":"generation","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*generation","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*generation","is_type":true,"exported":true,"typedef":false,"ttype":"GENERATION","alias":true
+}
+}
+},{"name":"extensions","gen_name":"extensions","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*extensions","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":13,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*extensions","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_extensions","alias":true
+}
+}
+},{"name":"session-etypes","gen_name":"session_etypes","optional":true,"defval":null,"type":{"name":"HDB_entry","gen_name":"*session_etypes","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":14,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry","gen_name":"*session_etypes","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_EncTypeList","alias":true
+}
+}
+}],"decorate":[{"type":"void","name":"context","optional":true,"external":true,"pointer":false,"void_star":false,"struct_star":false,"copy_function":"","free_function":"","header_name":""},{"type":"int","name":"aliased","optional":false,"external":true,"pointer":false,"void_star":false,"struct_star":false,"copy_function":"","free_function":"","header_name":""}]}
+}
+{"name":"HDB_entry_alias","gen_name":"HDB_entry_alias","is_type":true,"exported":false,"typedef":true,"tagclass":"APPLICATION","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry_alias","gen_name":"HDB_entry_alias","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry_alias","gen_name":"HDB_entry_alias","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct HDB_entry_alias","members":[
+{"name":"principal","gen_name":"principal","optional":true,"defval":null,"type":{"name":"HDB_entry_alias","gen_name":"*principal","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"HDB_entry_alias","gen_name":"*principal","is_type":true,"exported":true,"typedef":false,"ttype":"Principal","alias":true
+}
+}
+}]}
+}
+}
+{"name":"HDB_EntryOrAlias","gen_name":"HDB_EntryOrAlias","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct HDB_EntryOrAlias","extensible":false,"members":[
+{"name":"HDB_EntryOrAlias","gen_name":"entry","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_entry","alias":true
+}
+,{"name":"HDB_EntryOrAlias","gen_name":"alias","is_type":true,"exported":true,"typedef":false,"ttype":"HDB_entry_alias","alias":true
+}
+]}

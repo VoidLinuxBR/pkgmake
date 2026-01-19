@@ -1,0 +1,2 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/bin/default/third_party/heimdal_build/samba4kgetcred.objlist.empty.c.134.o: \
+ third_party/heimdal_build/samba4kgetcred.objlist.empty.c

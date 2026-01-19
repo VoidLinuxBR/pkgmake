@@ -1,0 +1,181 @@
+{"name":"MechType","gen_name":"MechType","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"MechType","gen_name":"MechType","is_type":true,"exported":false,"typedef":true,"ttype":"OBJECT IDENTIFIER","ctype":"heim_oid"}
+}
+{"name":"ContextFlags","gen_name":"ContextFlags","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"ContextFlags","gen_name":"ContextFlags","is_type":true,"exported":false,"typedef":true,"ttype":"BIT STRING","ctype":"struct ContextFlags","members":[
+{"name":"ContextFlags","gen_name":"delegFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"mutualFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"replayFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"sequenceFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"anonFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"confFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"integFlag:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused7:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused8:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused9:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused10:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused11:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused12:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused13:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused14:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused15:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused16:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused17:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused18:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused19:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused20:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused21:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused22:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused23:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused24:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused25:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused26:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused27:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused28:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused29:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused30:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"ContextFlags","gen_name":"_unused31:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+]}
+}
+{"name":"NegStateEnum","gen_name":"NegStateEnum","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":10,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegStateEnum","gen_name":"NegStateEnum","is_type":true,"exported":true,"typedef":true,"ttype":"INTEGER","ctype":"enum","members":[
+{"accept_completed":0},
+{"accept_incomplete":1},
+{"reject":2},
+{"request_mic":3}
+]}
+}
+{"module":"SPNEGO","tagging":"explicit","objid":[]}
+{"name":"MechTypeList","gen_name":"MechTypeList","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"MechTypeList","gen_name":"MechTypeList","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct MechTypeList","members":[{"name":"MechTypeList","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"MechTypeList","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"MechType","alias":true
+}
+]}
+}
+{"name":"NegHints","gen_name":"NegHints","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegHints","gen_name":"NegHints","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NegHints","members":[
+{"name":"hintName","gen_name":"hintName","optional":true,"defval":null,"type":{"name":"NegHints","gen_name":"*hintName","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegHints","gen_name":"*hintName","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":27,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegHints","gen_name":"*hintName","is_type":true,"exported":false,"typedef":false,"ttype":"GeneralString","ctype":"heim_general_string"}
+}
+}
+},{"name":"hintAddress","gen_name":"hintAddress","optional":true,"defval":null,"type":{"name":"NegHints","gen_name":"*hintAddress","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegHints","gen_name":"*hintAddress","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegHints","gen_name":"*hintAddress","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NegTokenInit2","gen_name":"NegTokenInit2","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit2","gen_name":"NegTokenInit2","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NegTokenInit2","members":[
+{"name":"mechTypes","gen_name":"mechTypes","optional":false,"type":{"name":"NegTokenInit2","gen_name":"mechTypes","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit2","gen_name":"mechTypes","is_type":true,"exported":true,"typedef":false,"ttype":"MechTypeList","alias":true
+}
+}
+},{"name":"reqFlags","gen_name":"reqFlags","optional":true,"defval":null,"type":{"name":"NegTokenInit2","gen_name":"*reqFlags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit2","gen_name":"*reqFlags","is_type":true,"exported":true,"typedef":false,"ttype":"ContextFlags","alias":true
+}
+}
+},{"name":"mechToken","gen_name":"mechToken","optional":true,"defval":null,"type":{"name":"NegTokenInit2","gen_name":"*mechToken","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit2","gen_name":"*mechToken","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit2","gen_name":"*mechToken","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"negHints","gen_name":"negHints","optional":true,"defval":null,"type":{"name":"NegTokenInit2","gen_name":"*negHints","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit2","gen_name":"*negHints","is_type":true,"exported":true,"typedef":false,"ttype":"NegHints","alias":true
+}
+}
+}]}
+}
+{"name":"NegTokenInit","gen_name":"NegTokenInit","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"NegTokenInit","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":true,"ctype":"struct NegTokenInit","members":[
+{"name":"mechTypes","gen_name":"mechTypes","optional":false,"type":{"name":"NegTokenInit","gen_name":"mechTypes","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"mechTypes","is_type":true,"exported":true,"typedef":false,"ttype":"MechTypeList","alias":true
+}
+}
+},{"name":"reqFlags","gen_name":"reqFlags","optional":true,"defval":null,"type":{"name":"NegTokenInit","gen_name":"*reqFlags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"*reqFlags","is_type":true,"exported":true,"typedef":false,"ttype":"ContextFlags","alias":true
+}
+}
+},{"name":"mechToken","gen_name":"mechToken","optional":true,"defval":null,"type":{"name":"NegTokenInit","gen_name":"*mechToken","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"*mechToken","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"*mechToken","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"mechListMIC","gen_name":"mechListMIC","optional":true,"defval":null,"type":{"name":"NegTokenInit","gen_name":"*mechListMIC","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"*mechListMIC","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenInit","gen_name":"*mechListMIC","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NegTokenResp","gen_name":"NegTokenResp","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"NegTokenResp","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":true,"ctype":"struct NegTokenResp","members":[
+{"name":"negState","gen_name":"negState","optional":true,"defval":null,"type":{"name":"NegTokenResp","gen_name":"*negState","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"*negState","is_type":true,"exported":true,"typedef":false,"ttype":"NegStateEnum","alias":true
+}
+}
+},{"name":"supportedMech","gen_name":"supportedMech","optional":true,"defval":null,"type":{"name":"NegTokenResp","gen_name":"*supportedMech","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"*supportedMech","is_type":true,"exported":true,"typedef":false,"ttype":"MechType","alias":true
+}
+}
+},{"name":"responseToken","gen_name":"responseToken","optional":true,"defval":null,"type":{"name":"NegTokenResp","gen_name":"*responseToken","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"*responseToken","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"*responseToken","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"mechListMIC","gen_name":"mechListMIC","optional":true,"defval":null,"type":{"name":"NegTokenResp","gen_name":"*mechListMIC","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"*mechListMIC","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegTokenResp","gen_name":"*mechListMIC","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NegotiationToken","gen_name":"NegotiationToken","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct NegotiationToken","extensible":false,"members":[
+{"name":"NegotiationToken","gen_name":"negTokenInit","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegotiationToken","gen_name":"negTokenInit","is_type":true,"exported":true,"typedef":false,"ttype":"NegTokenInit","alias":true
+}
+}
+,{"name":"NegotiationToken","gen_name":"negTokenResp","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegotiationToken","gen_name":"negTokenResp","is_type":true,"exported":true,"typedef":false,"ttype":"NegTokenResp","alias":true
+}
+}
+]}
+{"name":"NegotiationToken2","gen_name":"NegotiationToken2","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct NegotiationToken2","extensible":false,"members":[
+{"name":"NegotiationToken2","gen_name":"negTokenInit","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NegotiationToken2","gen_name":"negTokenInit","is_type":true,"exported":true,"typedef":false,"ttype":"NegTokenInit2","alias":true
+}
+}
+]}

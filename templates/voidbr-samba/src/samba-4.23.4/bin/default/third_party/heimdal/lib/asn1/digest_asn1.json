@@ -1,0 +1,591 @@
+{"imports":"krb5"}
+{"name":"DigestTypes","gen_name":"DigestTypes","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestTypes","gen_name":"DigestTypes","is_type":true,"exported":false,"typedef":true,"ttype":"BIT STRING","ctype":"struct DigestTypes","members":[
+{"name":"DigestTypes","gen_name":"ntlm_v1:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"ntlm_v1_session:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"ntlm_v2:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"digest_md5:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"chap_md5:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"ms_chap_v2:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused6:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused7:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused8:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused9:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused10:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused11:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused12:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused13:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused14:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused15:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused16:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused17:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused18:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused19:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused20:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused21:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused22:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused23:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused24:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused25:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused26:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused27:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused28:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused29:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused30:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestTypes","gen_name":"_unused31:1","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+]}
+}
+{"module":"DIGEST","tagging":"explicit","objid":[]}
+{"name":"DigestInit","gen_name":"DigestInit","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit","gen_name":"DigestInit","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestInit","members":[
+{"name":"type","gen_name":"type","optional":false,"type":{"name":"DigestInit","gen_name":"type","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit","gen_name":"type","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"channel","gen_name":"channel","optional":true,"defval":null,"type":{"name":"DigestInit","gen_name":"*channel","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit","gen_name":"*channel","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit","gen_name":"*channel","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestInit_channel","members":[
+{"name":"cb-type","gen_name":"cb_type","optional":false,"type":{"name":"DigestInit_channel","gen_name":"cb_type","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit_channel","gen_name":"cb_type","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"cb-binding","gen_name":"cb_binding","optional":false,"type":{"name":"DigestInit_channel","gen_name":"cb_binding","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit_channel","gen_name":"cb_binding","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}]}
+}
+}
+},{"name":"hostname","gen_name":"hostname","optional":true,"defval":null,"type":{"name":"DigestInit","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInit","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+}]}
+}
+{"name":"DigestInitReply","gen_name":"DigestInitReply","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInitReply","gen_name":"DigestInitReply","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestInitReply","members":[
+{"name":"nonce","gen_name":"nonce","optional":false,"type":{"name":"DigestInitReply","gen_name":"nonce","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInitReply","gen_name":"nonce","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"opaque","gen_name":"opaque","optional":false,"type":{"name":"DigestInitReply","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInitReply","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"identifier","gen_name":"identifier","optional":true,"defval":null,"type":{"name":"DigestInitReply","gen_name":"*identifier","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInitReply","gen_name":"*identifier","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestInitReply","gen_name":"*identifier","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+}]}
+}
+{"name":"DigestRequest","gen_name":"DigestRequest","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"DigestRequest","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestRequest","members":[
+{"name":"type","gen_name":"type","optional":false,"type":{"name":"DigestRequest","gen_name":"type","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"type","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"digest","gen_name":"digest","optional":false,"type":{"name":"DigestRequest","gen_name":"digest","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"digest","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"username","gen_name":"username","optional":false,"type":{"name":"DigestRequest","gen_name":"username","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"username","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"responseData","gen_name":"responseData","optional":false,"type":{"name":"DigestRequest","gen_name":"responseData","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"responseData","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"authid","gen_name":"authid","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*authid","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*authid","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*authid","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"authentication-user","gen_name":"authentication_user","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*authentication_user","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*authentication_user","is_type":true,"exported":true,"typedef":false,"ttype":"Principal","alias":true
+}
+}
+},{"name":"realm","gen_name":"realm","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*realm","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*realm","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*realm","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"method","gen_name":"method","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*method","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*method","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*method","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"uri","gen_name":"uri","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*uri","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*uri","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*uri","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"serverNonce","gen_name":"serverNonce","optional":false,"type":{"name":"DigestRequest","gen_name":"serverNonce","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"serverNonce","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"clientNonce","gen_name":"clientNonce","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*clientNonce","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*clientNonce","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*clientNonce","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"nonceCount","gen_name":"nonceCount","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*nonceCount","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*nonceCount","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*nonceCount","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"qop","gen_name":"qop","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*qop","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":7,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*qop","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*qop","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"identifier","gen_name":"identifier","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*identifier","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":8,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*identifier","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*identifier","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"hostname","gen_name":"hostname","optional":true,"defval":null,"type":{"name":"DigestRequest","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":9,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"opaque","gen_name":"opaque","optional":false,"type":{"name":"DigestRequest","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRequest","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}]}
+}
+{"name":"DigestError","gen_name":"DigestError","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestError","gen_name":"DigestError","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestError","members":[
+{"name":"reason","gen_name":"reason","optional":false,"type":{"name":"DigestError","gen_name":"reason","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestError","gen_name":"reason","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"code","gen_name":"code","optional":false,"type":{"name":"DigestError","gen_name":"code","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestError","gen_name":"code","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"int"}
+}
+}]}
+}
+{"name":"DigestResponse","gen_name":"DigestResponse","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"DigestResponse","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestResponse","members":[
+{"name":"success","gen_name":"success","optional":false,"type":{"name":"DigestResponse","gen_name":"success","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"success","is_type":true,"exported":false,"typedef":false,"ttype":"BOOLEAN","ctype":"unsigned int"}
+}
+},{"name":"rsp","gen_name":"rsp","optional":true,"defval":null,"type":{"name":"DigestResponse","gen_name":"*rsp","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*rsp","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*rsp","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"tickets","gen_name":"tickets","optional":true,"defval":null,"type":{"name":"DigestResponse","gen_name":"*tickets","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*tickets","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*tickets","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct DigestResponse_tickets","members":[{"name":"DigestResponse_tickets","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"DigestResponse_tickets","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse_tickets","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+]}
+}
+}
+},{"name":"channel","gen_name":"channel","optional":true,"defval":null,"type":{"name":"DigestResponse","gen_name":"*channel","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*channel","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*channel","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestResponse_channel","members":[
+{"name":"cb-type","gen_name":"cb_type","optional":false,"type":{"name":"DigestResponse_channel","gen_name":"cb_type","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse_channel","gen_name":"cb_type","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+},{"name":"cb-binding","gen_name":"cb_binding","optional":false,"type":{"name":"DigestResponse_channel","gen_name":"cb_binding","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse_channel","gen_name":"cb_binding","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}]}
+}
+}
+},{"name":"session-key","gen_name":"session_key","optional":true,"defval":null,"type":{"name":"DigestResponse","gen_name":"*session_key","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*session_key","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestResponse","gen_name":"*session_key","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NTLMInit","gen_name":"NTLMInit","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"NTLMInit","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NTLMInit","members":[
+{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"NTLMInit","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"hostname","gen_name":"hostname","optional":true,"defval":null,"type":{"name":"NTLMInit","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"*hostname","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"domain","gen_name":"domain","optional":true,"defval":null,"type":{"name":"NTLMInit","gen_name":"*domain","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"*domain","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInit","gen_name":"*domain","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+}]}
+}
+{"name":"NTLMInitReply","gen_name":"NTLMInitReply","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"NTLMInitReply","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NTLMInitReply","members":[
+{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"NTLMInitReply","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"opaque","gen_name":"opaque","optional":false,"type":{"name":"NTLMInitReply","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"targetname","gen_name":"targetname","optional":false,"type":{"name":"NTLMInitReply","gen_name":"targetname","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"targetname","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"targetname","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"challenge","gen_name":"challenge","optional":false,"type":{"name":"NTLMInitReply","gen_name":"challenge","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"challenge","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"challenge","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"targetinfo","gen_name":"targetinfo","optional":true,"defval":null,"type":{"name":"NTLMInitReply","gen_name":"*targetinfo","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"*targetinfo","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMInitReply","gen_name":"*targetinfo","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NTLMRequest","gen_name":"NTLMRequest","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"NTLMRequest","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NTLMRequest","members":[
+{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"NTLMRequest","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"opaque","gen_name":"opaque","optional":false,"type":{"name":"NTLMRequest","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"opaque","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"username","gen_name":"username","optional":false,"type":{"name":"NTLMRequest","gen_name":"username","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"username","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"username","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"targetname","gen_name":"targetname","optional":false,"type":{"name":"NTLMRequest","gen_name":"targetname","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"targetname","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"targetname","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"targetinfo","gen_name":"targetinfo","optional":true,"defval":null,"type":{"name":"NTLMRequest","gen_name":"*targetinfo","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"*targetinfo","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"*targetinfo","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"lm","gen_name":"lm","optional":false,"type":{"name":"NTLMRequest","gen_name":"lm","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"lm","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"lm","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"ntlm","gen_name":"ntlm","optional":false,"type":{"name":"NTLMRequest","gen_name":"ntlm","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"ntlm","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"ntlm","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"sessionkey","gen_name":"sessionkey","optional":true,"defval":null,"type":{"name":"NTLMRequest","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":7,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NTLMResponse","gen_name":"NTLMResponse","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"NTLMResponse","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NTLMResponse","members":[
+{"name":"success","gen_name":"success","optional":false,"type":{"name":"NTLMResponse","gen_name":"success","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"success","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"success","is_type":true,"exported":false,"typedef":false,"ttype":"BOOLEAN","ctype":"unsigned int"}
+}
+}
+},{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"NTLMResponse","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"sessionkey","gen_name":"sessionkey","optional":true,"defval":null,"type":{"name":"NTLMResponse","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"tickets","gen_name":"tickets","optional":true,"defval":null,"type":{"name":"NTLMResponse","gen_name":"*tickets","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"*tickets","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse","gen_name":"*tickets","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct NTLMResponse_tickets","members":[{"name":"NTLMResponse_tickets","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"NTLMResponse_tickets","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMResponse_tickets","gen_name":"*val","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+]}
+}
+}
+}]}
+}
+{"name":"NTLMRequest2","gen_name":"NTLMRequest2","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"NTLMRequest2","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NTLMRequest2","members":[
+{"name":"loginUserName","gen_name":"loginUserName","optional":false,"type":{"name":"NTLMRequest2","gen_name":"loginUserName","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"loginUserName","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"loginUserName","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"loginDomainName","gen_name":"loginDomainName","optional":false,"type":{"name":"NTLMRequest2","gen_name":"loginDomainName","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"loginDomainName","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":12,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"loginDomainName","is_type":true,"exported":false,"typedef":false,"ttype":"UTF8String","ctype":"heim_utf8_string"}
+}
+}
+},{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"NTLMRequest2","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"lmchallenge","gen_name":"lmchallenge","optional":false,"type":{"name":"NTLMRequest2","gen_name":"lmchallenge","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"lmchallenge","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"lmchallenge","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"ntChallengeResponce","gen_name":"ntChallengeResponce","optional":false,"type":{"name":"NTLMRequest2","gen_name":"ntChallengeResponce","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"ntChallengeResponce","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"ntChallengeResponce","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"lmChallengeResponce","gen_name":"lmChallengeResponce","optional":false,"type":{"name":"NTLMRequest2","gen_name":"lmChallengeResponce","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"lmChallengeResponce","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMRequest2","gen_name":"lmChallengeResponce","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"NTLMReply","gen_name":"NTLMReply","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"NTLMReply","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct NTLMReply","members":[
+{"name":"success","gen_name":"success","optional":false,"type":{"name":"NTLMReply","gen_name":"success","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"success","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"success","is_type":true,"exported":false,"typedef":false,"ttype":"BOOLEAN","ctype":"unsigned int"}
+}
+}
+},{"name":"flags","gen_name":"flags","optional":false,"type":{"name":"NTLMReply","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"flags","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}
+},{"name":"sessionkey","gen_name":"sessionkey","optional":true,"defval":null,"type":{"name":"NTLMReply","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"NTLMReply","gen_name":"*sessionkey","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+}]}
+}
+{"name":"DigestReqInner","gen_name":"DigestReqInner","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct DigestReqInner","extensible":false,"members":[
+{"name":"DigestReqInner","gen_name":"init","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestReqInner","gen_name":"init","is_type":true,"exported":true,"typedef":false,"ttype":"DigestInit","alias":true
+}
+}
+,{"name":"DigestReqInner","gen_name":"digestRequest","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestReqInner","gen_name":"digestRequest","is_type":true,"exported":true,"typedef":false,"ttype":"DigestRequest","alias":true
+}
+}
+,{"name":"DigestReqInner","gen_name":"ntlmInit","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestReqInner","gen_name":"ntlmInit","is_type":true,"exported":true,"typedef":false,"ttype":"NTLMInit","alias":true
+}
+}
+,{"name":"DigestReqInner","gen_name":"ntlmRequest","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestReqInner","gen_name":"ntlmRequest","is_type":true,"exported":true,"typedef":false,"ttype":"NTLMRequest","alias":true
+}
+}
+,{"name":"DigestReqInner","gen_name":"supportedMechs","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestReqInner","gen_name":"supportedMechs","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestReqInner","gen_name":"supportedMechs","is_type":true,"exported":false,"typedef":false,"ttype":"NULL","ctype":"int"}
+}
+}
+]}
+{"name":"DigestREQ","gen_name":"DigestREQ","is_type":true,"exported":false,"typedef":true,"tagclass":"APPLICATION","tagvalue":128,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREQ","gen_name":"DigestREQ","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREQ","gen_name":"DigestREQ","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestREQ","members":[
+{"name":"apReq","gen_name":"apReq","optional":false,"type":{"name":"DigestREQ","gen_name":"apReq","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREQ","gen_name":"apReq","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREQ","gen_name":"apReq","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"innerReq","gen_name":"innerReq","optional":false,"type":{"name":"DigestREQ","gen_name":"innerReq","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREQ","gen_name":"innerReq","is_type":true,"exported":true,"typedef":false,"ttype":"EncryptedData","alias":true
+}
+}
+}]}
+}
+}
+{"name":"DigestRepInner","gen_name":"DigestRepInner","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct DigestRepInner","extensible":true,"members":[
+{"name":"DigestRepInner","gen_name":"error","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRepInner","gen_name":"error","is_type":true,"exported":true,"typedef":false,"ttype":"DigestError","alias":true
+}
+}
+,{"name":"DigestRepInner","gen_name":"initReply","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRepInner","gen_name":"initReply","is_type":true,"exported":true,"typedef":false,"ttype":"DigestInitReply","alias":true
+}
+}
+,{"name":"DigestRepInner","gen_name":"response","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRepInner","gen_name":"response","is_type":true,"exported":true,"typedef":false,"ttype":"DigestResponse","alias":true
+}
+}
+,{"name":"DigestRepInner","gen_name":"ntlmInitReply","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRepInner","gen_name":"ntlmInitReply","is_type":true,"exported":true,"typedef":false,"ttype":"NTLMInitReply","alias":true
+}
+}
+,{"name":"DigestRepInner","gen_name":"ntlmResponse","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRepInner","gen_name":"ntlmResponse","is_type":true,"exported":true,"typedef":false,"ttype":"NTLMResponse","alias":true
+}
+}
+,{"name":"DigestRepInner","gen_name":"supportedMechs","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestRepInner","gen_name":"supportedMechs","is_type":true,"exported":true,"typedef":false,"ttype":"DigestTypes","alias":true
+}
+}
+]}
+{"name":"DigestREP","gen_name":"DigestREP","is_type":true,"exported":false,"typedef":true,"tagclass":"APPLICATION","tagvalue":129,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREP","gen_name":"DigestREP","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREP","gen_name":"DigestREP","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct DigestREP","members":[
+{"name":"apRep","gen_name":"apRep","optional":false,"type":{"name":"DigestREP","gen_name":"apRep","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREP","gen_name":"apRep","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREP","gen_name":"apRep","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}
+},{"name":"innerRep","gen_name":"innerRep","optional":false,"type":{"name":"DigestREP","gen_name":"innerRep","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"DigestREP","gen_name":"innerRep","is_type":true,"exported":true,"typedef":false,"ttype":"EncryptedData","alias":true
+}
+}
+}]}
+}
+}

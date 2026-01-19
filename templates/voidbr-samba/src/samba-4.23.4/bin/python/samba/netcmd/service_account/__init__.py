@@ -1,0 +1,1 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/python/samba/netcmd/service_account/__init__.py

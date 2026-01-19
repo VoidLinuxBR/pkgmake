@@ -1,0 +1,1 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/python/samba/netcmd/domain/auth/policy/user_allowed_to_authenticate_from.py

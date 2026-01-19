@@ -1,0 +1,7 @@
+DEFINE_OID_WITH_NAME(id_pkcs7)
+DEFINE_OID_WITH_NAME(id_pkcs7_data)
+DEFINE_OID_WITH_NAME(id_pkcs7_signedData)
+DEFINE_OID_WITH_NAME(id_pkcs7_envelopedData)
+DEFINE_OID_WITH_NAME(id_pkcs7_signedAndEnvelopedData)
+DEFINE_OID_WITH_NAME(id_pkcs7_digestedData)
+DEFINE_OID_WITH_NAME(id_pkcs7_encryptedData)

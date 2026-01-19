@@ -1,0 +1,419 @@
+                   ==============================
+                   Release Notes for Samba 4.23.4
+                         December 12, 2025
+                   ==============================
+
+
+This is the latest stable release of the Samba 4.23 release series.
+
+
+Changes since 4.23.3
+--------------------
+
+o  Ralph Boehme <slow@samba.org>
+   * BUG 15926: Samba 4.22 breaks Time Machine
+   * BUG 15947: mdssvc doesn't support $time.iso dates before 1970
+
+o  Günther Deschner <gd@samba.org>
+   * BUG 15963: Fix winbind cache consistency
+
+o  Volker Lendecke <vl@samba.org>
+   * BUG 15897: Assert failed: (dirfd != -1) || (smb_fname->base_name[0] == '/')
+     in vfswrap_openat
+   * BUG 15950: ctdb can crash with inconsistent cluster lock configuration
+
+o  Anoop C S <anoopcs@samba.org>
+   * BUG 15897: Assert failed: (dirfd != -1) || (smb_fname->base_name[0] == '/')
+     in vfswrap_openat
+
+o  Andreas Schneider <asn@samba.org>
+   * BUG 15809: samba-bgqd: rework man page
+   * BUG 15936: samba-bgqd can't find [printers] share
+   * BUG 15955: Winbind can hang forever in gssapi if there are network issues.
+   * BUG 15961: libldb requires linking libreplace on Linux
+
+
+#######################################
+Reporting bugs & Development Discussion
+#######################################
+
+Please discuss this release on the samba-technical mailing list or by
+joining the #samba-technical:matrix.org matrix room, or
+#samba-technical IRC channel on irc.libera.chat.
+
+If you do report problems then please try to send high quality
+feedback. If you don't provide vital information to help us track down
+the problem then you will probably be ignored.  All bug reports should
+be filed under the Samba 4.1 and newer product in the project's Bugzilla
+database (https://bugzilla.samba.org/).
+
+
+======================================================================
+== Our Code, Our Bugs, Our Responsibility.
+== The Samba Team
+======================================================================
+
+
+Release notes for older releases follow:
+----------------------------------------
+                   ==============================
+                   Release Notes for Samba 4.23.3
+                         November 07, 2025
+                   ==============================
+
+
+This is the latest stable release of the Samba 4.23 release series.
+
+
+Changes since 4.23.2
+--------------------
+
+o  Ralph Boehme <slow@samba.org>
+   * BUG 15926: Samba 4.22 breaks Time Machine.
+   * BUG 15927: Spotlight search restriction for shares incomplete and default
+     search searches in too many attributes.
+   * BUG 15930: Searching for numbers doesn't work with Spotlight.
+   * BUG 15931: rpcd_mdssvc may crash because name mangling is not initialized.
+   * BUG 15933: Only increment lease epoch if a lease was granted.
+
+o  Pavel Filipenský <pfilipensky@samba.org>
+   * BUG 15940: vfs_recycle does not update mtime.
+   * BUG 15943: samba-log-parser fails with UnicodeDecodeError: 'utf-8' codec
+     can't decode byte.
+
+o  Martin Schwenke <mschwenke@ddn.com>
+   * BUG 15935: Crash in ctdbd on failed updateip.
+
+
+#######################################
+Reporting bugs & Development Discussion
+#######################################
+
+Please discuss this release on the samba-technical mailing list or by
+joining the #samba-technical:matrix.org matrix room, or
+#samba-technical IRC channel on irc.libera.chat.
+
+If you do report problems then please try to send high quality
+feedback. If you don't provide vital information to help us track down
+the problem then you will probably be ignored.  All bug reports should
+be filed under the Samba 4.1 and newer product in the project's Bugzilla
+database (https://bugzilla.samba.org/).
+
+
+======================================================================
+== Our Code, Our Bugs, Our Responsibility.
+== The Samba Team
+======================================================================
+
+
+----------------------------------------------------------------------
+                   ==============================
+                   Release Notes for Samba 4.23.2
+                          October 15, 2025
+                   ==============================
+
+
+This is a security release in order to address the following defects:
+
+o CVE-2025-9640:  Uninitialized memory disclosure via vfs_streams_xattr.
+                  https://www.samba.org/samba/security/CVE-2025-9640.html
+
+o CVE-2025-10230: Command injection via WINS server hook script.
+                  https://www.samba.org/samba/security/CVE-2025-10230.html
+
+
+Changes since 4.23.1
+--------------------
+
+o  Douglas Bagnall <douglas.bagnall@catalyst.net.nz>
+   * BUG 15903: CVE-2025-10230.
+
+o  Andrew Walker <andrew.walker@truenas.com>
+   * BUG 15885: CVE-2025-9640.
+
+
+#######################################
+Reporting bugs & Development Discussion
+#######################################
+
+Please discuss this release on the samba-technical mailing list or by
+joining the #samba-technical:matrix.org matrix room, or
+#samba-technical IRC channel on irc.libera.chat.
+
+If you do report problems then please try to send high quality
+feedback. If you don't provide vital information to help us track down
+the problem then you will probably be ignored.  All bug reports should
+be filed under the Samba 4.1 and newer product in the project's Bugzilla
+database (https://bugzilla.samba.org/).
+
+
+======================================================================
+== Our Code, Our Bugs, Our Responsibility.
+== The Samba Team
+======================================================================
+
+
+----------------------------------------------------------------------
+                   ==============================
+                   Release Notes for Samba 4.23.1
+                         September 26, 2025
+                   ==============================
+
+
+This is the latest stable release of the Samba 4.23 release series.
+
+
+Changes since 4.23.0
+--------------------
+
+o  Alexander Bokovoy <ab@samba.org>
+   * BUG 15920: Incomplete bind configuration causes DLZ plugin to crash.
+
+o  Volker Lendecke <vl@samba.org>
+   * BUG 15914: winbind can crash at startup.
+
+o  Anoop C S <anoopcs@samba.org>
+   * BUG 15919: vfs_ceph_new should not use ceph_ll_nonblocking_readv_writev for
+     fsync_send.
+
+o  Andreas Schneider <asn@samba.org>
+   * BUG 15904: CTDB does not support PCP 7.0.0.
+
+o  Martin Schwenke <mschwenke@ddn.com>
+   * BUG 15921: CTDB_SOCKET can be used even when CTDB_TEST_MODE is not set.
+
+o  Shachar Sharon <ssharon@redhat.com>
+   * BUG 15919: vfs_ceph_new should not use ceph_ll_nonblocking_readv_writev for
+     fsync_send.
+
+
+#######################################
+Reporting bugs & Development Discussion
+#######################################
+
+Please discuss this release on the samba-technical mailing list or by
+joining the #samba-technical:matrix.org matrix room, or
+#samba-technical IRC channel on irc.libera.chat.
+
+If you do report problems then please try to send high quality
+feedback. If you don't provide vital information to help us track down
+the problem then you will probably be ignored.  All bug reports should
+be filed under the Samba 4.1 and newer product in the project's Bugzilla
+database (https://bugzilla.samba.org/).
+
+
+======================================================================
+== Our Code, Our Bugs, Our Responsibility.
+== The Samba Team
+======================================================================
+
+
+----------------------------------------------------------------------
+                   ==============================
+                   Release Notes for Samba 4.23.0
+                         September 12, 2025
+                   ==============================
+
+
+This is the first stable release of the Samba 4.23 release series.
+Please read the release notes carefully before upgrading.
+
+
+NEW FEATURES/CHANGES
+====================
+
+Enable SMB3 Unix Extensions by default
+--------------------------------------
+Starting with Samba 4.23, the SMB3 UNIX Extensions are enabled by
+default. These extensions provide first-class support for POSIX semantics
+over SMB3, allowing UNIX and Linux clients to access file services with
+features such as proper POSIX permissions, symlink handling, hardlinks,
+and special file types.
+
+Enabling this feature by default improves interoperability for UNIX/Linux
+clients without requiring additional configuration. Windows clients that
+do not support the extensions will continue to function normally, by
+using standard SMB3 behavior.
+
+Add support for SMB3 over QUIC
+------------------------------
+The new "client smb transports" and "server smb transport"
+allow a more flexible configuration for the used tcp
+sockets.
+
+It also got the ability specify "quic" as possible transport.
+If quic should be used in addition to the defaults something
+like "server smb transports = +quic" can be used.
+
+For the client quic only works with name based uncs,
+ip address based uncs are not supported.
+
+Note for the server 'quic' requires the quic.ko kernel module
+for Linux from https://github.com/lxin/quic (tested with Linux 6.14).
+Future Linux versions may support it natively, here's the
+branch that will hopefully accepted upstream soon:
+https://github.com/lxin/net-next/commits/quic/
+
+For the client side there's a fallback to the userspace ngtcp2
+library if the quic kernel module is not available.
+
+Check the smb.conf manpage for additional hints
+about the "client smb transports" and "server smb transport"
+options and interactions with tls related options.
+
+Modern write time update logic
+------------------------------
+Samba 4.23 changes file timestamp handling to match modern Windows servers.
+Earlier releases used delayed write time updates, where last_write_time was
+only refreshed after a short idle period. Now Samba applies immediate
+timestamp updates consistent with modern Windows 10/Server 2016 or newer.
+
+Initial version of smb_prometheus_endpoint
+------------------------------------------
+Samba 4.23 introduces the smb_prometheus_endpoint utility, which exports
+Samba server metrics in Prometheus-compatible format. This enables seamless
+integration of Samba performance and status monitoring into existing
+Prometheus and Grafana environments. For usage and configuration details,
+refer to the new smb_prometheus_endpoint man page.
+
+samba-tool domain backup --no-secrets avoids confidential attributes
+--------------------------------------------------------------------
+The --no-secrets option creates a back-up without secret attributes
+(e.g. passwords), suitable for use in a lab domain. Until now it could
+still contain confidential attributes, including BitLocker recovery
+data and KDS root keys. Objects in the classes msKds-ProvRootKey,
+msFVE-RecoveryInformation, and msTPM-InformationObject will now be
+entirely removed from the backup, as these objects are required by
+schema to have confidential attributes and are no use without them.
+
+CTDB changes
+------------
+CTDB now supports loading tunables from
+/etc/ctdb/tunables.d/*.tunables, in addition to the standard
+/etc/ctdb/tunables.conf.  See the ctdb-tunables(7) manual page for
+more details.  Note that the above locations are examples - the
+actual location of these files will depend on compile time
+configuration.
+
+It isn't expected that many users will require a directory of tunables
+files, since most users do not need to change tunables from their
+default values.  However, this allows vendors to ship their required
+tunables settings (for example, in one or more files marked "do not
+edit") while still allowing local administrators to add their own
+tunables settings (in one or more separate files).
+
+Per-share profiling stats
+-------------------------
+Starting with Samba 4.23, users can collect profile counters at a
+per-share level. This feature requires building Samba with profiling
+data enabled and adding an appropriate `smb.conf` parameter for
+specific shares. It's particularly useful for deployments with a large
+number of active shares, allowing administrators to monitor individual
+share activity and identify potential bottlenecks or hot-spots. When
+enabled, users can inspect current per-share profile information
+("Extended Profile") using the standard `smbstatus` utility.
+
+Currently, this functionality is supported only by the default and
+`ceph_new` VFS modules.
+
+
+REMOVED FEATURES
+================
+
+
+smb.conf changes
+================
+
+  Parameter Name                          Description     Default
+  --------------                          -----------     -------
+  smbd profiling share                    New             no
+  client smb transports                   New             tcp, nbt
+  server smb transports                   New             tcp, nbt
+  winbind varlink service                 New             no
+
+
+CHANGES SINCE 4.23.0rc4
+=======================
+
+o  Douglas Bagnall <douglas.bagnall@catalyst.net.nz>
+   * BUG 15911: samba.tests.safe_tarfile fails on Python 3.13 with additional
+     security fixes for tarfile support.
+
+o  Alexander Bokovoy <ab@samba.org>
+   * BUG 15904: CTDB does not support PCP 7.0.0.
+
+o  Pavel Filipenský <pfilipensky@samba.org>
+   * BUG 15905: samba-4.21 fails to join AD when multiple DCs are returned.
+
+o  Volker Lendecke <vl@samba.org>
+   * BUG 15908: Uninitialized read leads to hanging rpcd_spoolss.
+
+o  Andreas Schneider <asn@samba.org>
+   * BUG 15905: samba-4.21 fails to join AD when multiple DCs are returned.
+   * BUG 15907: Stack buffer overflow in samba3.smb2.dirlease.fileserver.
+
+
+CHANGES SINCE 4.23.0rc3
+=======================
+
+o  Alexander Bokovoy <ab@samba.org>
+   * BUG 15902: Regression in gssproxy support in 4.23.rc1+.
+
+o  MikeLiu <mikeliu@qnap.com>
+   * BUG 15900: 'net ads group' failed to list domain groups.
+
+
+CHANGES SINCE 4.23.0rc2
+=======================
+
+o  Ralph Boehme <slow@samba.org>
+   * BUG 15843: macOS Finder client DFS broken on 4.22.0.
+
+o  Stefan Metzmacher <metze@samba.org>
+   * BUG 15899: Self-signed certificates don't have X509v3 Subject Alternative
+     Name for DNS.
+
+o  Andreas Schneider <asn@samba.org>
+   * BUG 15893: Improve handling of principals and realms in client tools.
+
+
+CHANGES SINCE 4.23.0rc1
+=======================
+
+o  Björn Baumbach <bb@sernet.de>
+   * BUG 15896: libquic build fixes.
+
+o  Ralph Boehme <slow@samba.org>
+   * BUG 15844: getpwuid does not shift to new DC when current DC is down.
+   * BUG 15876: Windows security hardening locks out schannel'ed netlogon dc
+     calls like netr_DsRGetDCName.
+
+o  Gary Lockyer <gary@catalyst.net.nz>
+   * BUG 15896: libquic build fixes.
+
+
+KNOWN ISSUES
+============
+
+https://wiki.samba.org/index.php/Release_Planning_for_Samba_4.23#Release_blocking_bugs
+
+
+#######################################
+Reporting bugs & Development Discussion
+#######################################
+
+Please discuss this release on the samba-technical mailing list or by
+joining the #samba-technical:matrix.org matrix room, or
+#samba-technical IRC channel on irc.libera.chat
+
+If you do report problems then please try to send high quality
+feedback. If you don't provide vital information to help us track down
+the problem then you will probably be ignored.  All bug reports should
+be filed under the Samba 4.1 and newer product in the project's Bugzilla
+database (https://bugzilla.samba.org/).
+
+
+======================================================================
+== Our Code, Our Bugs, Our Responsibility.
+== The Samba Team
+======================================================================

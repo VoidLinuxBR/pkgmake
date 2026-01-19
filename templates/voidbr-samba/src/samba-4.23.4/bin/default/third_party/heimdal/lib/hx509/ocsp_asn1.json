@@ -1,0 +1,264 @@
+{"imports":"rfc2459"}
+{"name":"OCSPVersion","gen_name":"OCSPVersion","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPVersion","gen_name":"OCSPVersion","is_type":true,"exported":true,"typedef":true,"ttype":"INTEGER","ctype":"enum","members":[
+{"ocsp_v1":0}
+]}
+}
+{"name":"OCSPResponseStatus","gen_name":"OCSPResponseStatus","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":10,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseStatus","gen_name":"OCSPResponseStatus","is_type":true,"exported":true,"typedef":true,"ttype":"INTEGER","ctype":"enum","members":[
+{"successful":0},
+{"malformedRequest":1},
+{"internalError":2},
+{"tryLater":3},
+{"sigRequired":5},
+{"unauthorized":6}
+]}
+}
+{"name":"OCSPKeyHash","gen_name":"OCSPKeyHash","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPKeyHash","gen_name":"OCSPKeyHash","is_type":true,"exported":false,"typedef":true,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+{"name":"id-pkix-ocsp","gen_name":"id_pkix_ocsp","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"identified-organization","value":3},{"label":"dod","value":6},{"label":"internet","value":1},{"label":"security","value":5},{"label":"mechanisms","value":5},{"label":"pkix","value":7},{"label":"pkix-ad","value":48},{"label":null,"value":1}]}
+{"name":"id-pkix-ocsp-basic","gen_name":"id_pkix_ocsp_basic","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"identified-organization","value":3},{"label":"dod","value":6},{"label":"internet","value":1},{"label":"security","value":5},{"label":"mechanisms","value":5},{"label":"pkix","value":7},{"label":"pkix-ad","value":48},{"label":null,"value":1},{"label":null,"value":1}]}
+{"name":"id-pkix-ocsp-nonce","gen_name":"id_pkix_ocsp_nonce","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"identified-organization","value":3},{"label":"dod","value":6},{"label":"internet","value":1},{"label":"security","value":5},{"label":"mechanisms","value":5},{"label":"pkix","value":7},{"label":"pkix-ad","value":48},{"label":null,"value":1},{"label":null,"value":2}]}
+{"module":"OCSP","tagging":"explicit","objid":[]}
+{"name":"OCSPCertStatus","gen_name":"OCSPCertStatus","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct OCSPCertStatus","extensible":false,"members":[
+{"name":"OCSPCertStatus","gen_name":"good","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"IMPLICIT",
+"ttype":
+{"name":"OCSPCertStatus","gen_name":"good","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertStatus","gen_name":"good","is_type":true,"exported":false,"typedef":false,"ttype":"NULL","ctype":"int"}
+}
+}
+,{"name":"OCSPCertStatus","gen_name":"revoked","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"IMPLICIT",
+"ttype":
+{"name":"OCSPCertStatus","gen_name":"revoked","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertStatus","gen_name":"revoked","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPCertStatus_revoked","members":[
+{"name":"revocationTime","gen_name":"revocationTime","optional":false,"type":{"name":"OCSPCertStatus_revoked","gen_name":"revocationTime","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":24,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertStatus_revoked","gen_name":"revocationTime","is_type":true,"exported":false,"typedef":false,"ttype":"GeneralizedTime","ctype":"time_t"}
+}
+},{"name":"revocationReason","gen_name":"revocationReason","optional":true,"defval":null,"type":{"name":"OCSPCertStatus_revoked","gen_name":"*revocationReason","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertStatus_revoked","gen_name":"*revocationReason","is_type":true,"exported":true,"typedef":false,"ttype":"CRLReason","alias":true
+}
+}
+}]}
+}
+}
+,{"name":"OCSPCertStatus","gen_name":"unknown","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"IMPLICIT",
+"ttype":
+{"name":"OCSPCertStatus","gen_name":"unknown","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":5,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertStatus","gen_name":"unknown","is_type":true,"exported":false,"typedef":false,"ttype":"NULL","ctype":"int"}
+}
+}
+]}
+{"name":"OCSPCertID","gen_name":"OCSPCertID","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertID","gen_name":"OCSPCertID","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPCertID","members":[
+{"name":"hashAlgorithm","gen_name":"hashAlgorithm","optional":false,"type":{"name":"OCSPCertID","gen_name":"hashAlgorithm","is_type":true,"exported":true,"typedef":false,"ttype":"AlgorithmIdentifier","alias":true
+}
+},{"name":"issuerNameHash","gen_name":"issuerNameHash","optional":false,"type":{"name":"OCSPCertID","gen_name":"issuerNameHash","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertID","gen_name":"issuerNameHash","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+},{"name":"issuerKeyHash","gen_name":"issuerKeyHash","optional":false,"type":{"name":"OCSPCertID","gen_name":"issuerKeyHash","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPCertID","gen_name":"issuerKeyHash","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+},{"name":"serialNumber","gen_name":"serialNumber","optional":false,"type":{"name":"OCSPCertID","gen_name":"serialNumber","is_type":true,"exported":true,"typedef":false,"ttype":"CertificateSerialNumber","alias":true
+}
+}]}
+}
+{"name":"OCSPSingleResponse","gen_name":"OCSPSingleResponse","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSingleResponse","gen_name":"OCSPSingleResponse","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPSingleResponse","members":[
+{"name":"certID","gen_name":"certID","optional":false,"type":{"name":"OCSPSingleResponse","gen_name":"certID","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPCertID","alias":true
+}
+},{"name":"certStatus","gen_name":"certStatus","optional":false,"type":{"name":"OCSPSingleResponse","gen_name":"certStatus","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPCertStatus","alias":true
+}
+},{"name":"thisUpdate","gen_name":"thisUpdate","optional":false,"type":{"name":"OCSPSingleResponse","gen_name":"thisUpdate","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":24,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSingleResponse","gen_name":"thisUpdate","is_type":true,"exported":false,"typedef":false,"ttype":"GeneralizedTime","ctype":"time_t"}
+}
+},{"name":"nextUpdate","gen_name":"nextUpdate","optional":true,"defval":null,"type":{"name":"OCSPSingleResponse","gen_name":"*nextUpdate","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSingleResponse","gen_name":"*nextUpdate","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":24,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSingleResponse","gen_name":"*nextUpdate","is_type":true,"exported":false,"typedef":false,"ttype":"GeneralizedTime","ctype":"time_t"}
+}
+}
+},{"name":"singleExtensions","gen_name":"singleExtensions","optional":true,"defval":null,"type":{"name":"OCSPSingleResponse","gen_name":"*singleExtensions","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSingleResponse","gen_name":"*singleExtensions","is_type":true,"exported":true,"typedef":false,"ttype":"Extensions","alias":true
+}
+}
+}]}
+}
+{"name":"OCSPInnerRequest","gen_name":"OCSPInnerRequest","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPInnerRequest","gen_name":"OCSPInnerRequest","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPInnerRequest","members":[
+{"name":"reqCert","gen_name":"reqCert","optional":false,"type":{"name":"OCSPInnerRequest","gen_name":"reqCert","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPCertID","alias":true
+}
+},{"name":"singleRequestExtensions","gen_name":"singleRequestExtensions","optional":true,"defval":null,"type":{"name":"OCSPInnerRequest","gen_name":"*singleRequestExtensions","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPInnerRequest","gen_name":"*singleRequestExtensions","is_type":true,"exported":true,"typedef":false,"ttype":"Extensions","alias":true
+}
+}
+}]}
+}
+{"name":"OCSPTBSRequest","gen_name":"OCSPTBSRequest","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPTBSRequest","gen_name":"OCSPTBSRequest","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPTBSRequest","preserve":true,"members":[
+{"name":"version","gen_name":"version","optional":true,"defval":null,"type":{"name":"OCSPTBSRequest","gen_name":"*version","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPTBSRequest","gen_name":"*version","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPVersion","alias":true
+}
+}
+},{"name":"requestorName","gen_name":"requestorName","optional":true,"defval":null,"type":{"name":"OCSPTBSRequest","gen_name":"*requestorName","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPTBSRequest","gen_name":"*requestorName","is_type":true,"exported":true,"typedef":false,"ttype":"GeneralName","alias":true
+}
+}
+},{"name":"requestList","gen_name":"requestList","optional":false,"type":{"name":"OCSPTBSRequest","gen_name":"requestList","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPTBSRequest","gen_name":"requestList","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct OCSPTBSRequest_requestList","members":[{"name":"OCSPTBSRequest_requestList","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"OCSPTBSRequest_requestList","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPInnerRequest","alias":true
+}
+]}
+}
+},{"name":"requestExtensions","gen_name":"requestExtensions","optional":true,"defval":null,"type":{"name":"OCSPTBSRequest","gen_name":"*requestExtensions","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPTBSRequest","gen_name":"*requestExtensions","is_type":true,"exported":true,"typedef":false,"ttype":"Extensions","alias":true
+}
+}
+}]}
+}
+{"name":"OCSPSignature","gen_name":"OCSPSignature","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSignature","gen_name":"OCSPSignature","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPSignature","members":[
+{"name":"signatureAlgorithm","gen_name":"signatureAlgorithm","optional":false,"type":{"name":"OCSPSignature","gen_name":"signatureAlgorithm","is_type":true,"exported":true,"typedef":false,"ttype":"AlgorithmIdentifier","alias":true
+}
+},{"name":"signature","gen_name":"signature","optional":false,"type":{"name":"OCSPSignature","gen_name":"signature","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSignature","gen_name":"signature","is_type":true,"exported":false,"typedef":false,"ttype":"BIT STRING","ctype":"heim_bit_string"}
+}
+},{"name":"certs","gen_name":"certs","optional":true,"defval":null,"type":{"name":"OCSPSignature","gen_name":"*certs","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSignature","gen_name":"*certs","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPSignature","gen_name":"*certs","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct OCSPSignature_certs","members":[{"name":"OCSPSignature_certs","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"OCSPSignature_certs","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"Certificate","alias":true
+}
+]}
+}
+}
+}]}
+}
+{"name":"OCSPRequest","gen_name":"OCSPRequest","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPRequest","gen_name":"OCSPRequest","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPRequest","members":[
+{"name":"tbsRequest","gen_name":"tbsRequest","optional":false,"type":{"name":"OCSPRequest","gen_name":"tbsRequest","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPTBSRequest","alias":true
+}
+},{"name":"optionalSignature","gen_name":"optionalSignature","optional":true,"defval":null,"type":{"name":"OCSPRequest","gen_name":"*optionalSignature","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPRequest","gen_name":"*optionalSignature","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPSignature","alias":true
+}
+}
+}]}
+}
+{"name":"OCSPResponseBytes","gen_name":"OCSPResponseBytes","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseBytes","gen_name":"OCSPResponseBytes","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPResponseBytes","members":[
+{"name":"responseType","gen_name":"responseType","optional":false,"type":{"name":"OCSPResponseBytes","gen_name":"responseType","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseBytes","gen_name":"responseType","is_type":true,"exported":false,"typedef":false,"ttype":"OBJECT IDENTIFIER","ctype":"heim_oid"}
+}
+},{"name":"response","gen_name":"response","optional":false,"type":{"name":"OCSPResponseBytes","gen_name":"response","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseBytes","gen_name":"response","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+}]}
+}
+{"name":"OCSPResponse","gen_name":"OCSPResponse","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponse","gen_name":"OCSPResponse","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPResponse","members":[
+{"name":"responseStatus","gen_name":"responseStatus","optional":false,"type":{"name":"OCSPResponse","gen_name":"responseStatus","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPResponseStatus","alias":true
+}
+},{"name":"responseBytes","gen_name":"responseBytes","optional":true,"defval":null,"type":{"name":"OCSPResponse","gen_name":"*responseBytes","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponse","gen_name":"*responseBytes","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPResponseBytes","alias":true
+}
+}
+}]}
+}
+{"name":"OCSPResponderID","gen_name":"OCSPResponderID","is_type":true,"exported":false,"typedef":true,"ttype":"CHOICE","ctype":"struct OCSPResponderID","extensible":false,"members":[
+{"name":"OCSPResponderID","gen_name":"byName","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponderID","gen_name":"byName","is_type":true,"exported":true,"typedef":false,"ttype":"Name","alias":true
+}
+}
+,{"name":"OCSPResponderID","gen_name":"byKey","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponderID","gen_name":"byKey","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPKeyHash","alias":true
+}
+}
+]}
+{"name":"OCSPResponseData","gen_name":"OCSPResponseData","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseData","gen_name":"OCSPResponseData","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPResponseData","preserve":true,"members":[
+{"name":"version","gen_name":"version","optional":true,"defval":null,"type":{"name":"OCSPResponseData","gen_name":"*version","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseData","gen_name":"*version","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPVersion","alias":true
+}
+}
+},{"name":"responderID","gen_name":"responderID","optional":false,"type":{"name":"OCSPResponseData","gen_name":"responderID","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPResponderID","alias":true
+}
+},{"name":"producedAt","gen_name":"producedAt","optional":false,"type":{"name":"OCSPResponseData","gen_name":"producedAt","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":24,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseData","gen_name":"producedAt","is_type":true,"exported":false,"typedef":false,"ttype":"GeneralizedTime","ctype":"time_t"}
+}
+},{"name":"responses","gen_name":"responses","optional":false,"type":{"name":"OCSPResponseData","gen_name":"responses","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseData","gen_name":"responses","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct OCSPResponseData_responses","members":[{"name":"OCSPResponseData_responses","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"OCSPResponseData_responses","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPSingleResponse","alias":true
+}
+]}
+}
+},{"name":"responseExtensions","gen_name":"responseExtensions","optional":true,"defval":null,"type":{"name":"OCSPResponseData","gen_name":"*responseExtensions","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":1,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPResponseData","gen_name":"*responseExtensions","is_type":true,"exported":true,"typedef":false,"ttype":"Extensions","alias":true
+}
+}
+}]}
+}
+{"name":"OCSPBasicOCSPResponse","gen_name":"OCSPBasicOCSPResponse","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPBasicOCSPResponse","gen_name":"OCSPBasicOCSPResponse","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct OCSPBasicOCSPResponse","members":[
+{"name":"tbsResponseData","gen_name":"tbsResponseData","optional":false,"type":{"name":"OCSPBasicOCSPResponse","gen_name":"tbsResponseData","is_type":true,"exported":true,"typedef":false,"ttype":"OCSPResponseData","alias":true
+}
+},{"name":"signatureAlgorithm","gen_name":"signatureAlgorithm","optional":false,"type":{"name":"OCSPBasicOCSPResponse","gen_name":"signatureAlgorithm","is_type":true,"exported":true,"typedef":false,"ttype":"AlgorithmIdentifier","alias":true
+}
+},{"name":"signature","gen_name":"signature","optional":false,"type":{"name":"OCSPBasicOCSPResponse","gen_name":"signature","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":3,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPBasicOCSPResponse","gen_name":"signature","is_type":true,"exported":false,"typedef":false,"ttype":"BIT STRING","ctype":"heim_bit_string"}
+}
+},{"name":"certs","gen_name":"certs","optional":true,"defval":null,"type":{"name":"OCSPBasicOCSPResponse","gen_name":"*certs","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPBasicOCSPResponse","gen_name":"*certs","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"OCSPBasicOCSPResponse","gen_name":"*certs","is_type":true,"exported":false,"typedef":false,"ttype":"SEQUENCE OF","ctype":"struct OCSPBasicOCSPResponse_certs","members":[{"name":"OCSPBasicOCSPResponse_certs","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"OCSPBasicOCSPResponse_certs","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"Certificate","alias":true
+}
+]}
+}
+}
+}]}
+}

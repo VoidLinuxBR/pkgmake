@@ -1,0 +1,1 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/python/samba/tests/blackbox/smbcacls_propagate_inhertance.py

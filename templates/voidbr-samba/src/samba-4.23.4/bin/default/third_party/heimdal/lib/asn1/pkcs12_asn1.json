@@ -1,0 +1,141 @@
+{"imports":"cms"}
+{"imports":"rfc2459"}
+{"imports":"heim"}
+{"name":"id-pkcs-12","gen_name":"id_pkcs_12","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12}]}
+{"name":"id-pkcs-12PbeIds","gen_name":"id_pkcs_12PbeIds","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1}]}
+{"name":"id-pbeWithSHAAnd128BitRC4","gen_name":"id_pbeWithSHAAnd128BitRC4","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1},{"label":null,"value":1}]}
+{"name":"id-pbeWithSHAAnd40BitRC4","gen_name":"id_pbeWithSHAAnd40BitRC4","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1},{"label":null,"value":2}]}
+{"name":"id-pbeWithSHAAnd3-KeyTripleDES-CBC","gen_name":"id_pbeWithSHAAnd3_KeyTripleDES_CBC","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1},{"label":null,"value":3}]}
+{"name":"id-pbeWithSHAAnd2-KeyTripleDES-CBC","gen_name":"id_pbeWithSHAAnd2_KeyTripleDES_CBC","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1},{"label":null,"value":4}]}
+{"name":"id-pbeWithSHAAnd128BitRC2-CBC","gen_name":"id_pbeWithSHAAnd128BitRC2_CBC","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1},{"label":null,"value":5}]}
+{"name":"id-pbewithSHAAnd40BitRC2-CBC","gen_name":"id_pbewithSHAAnd40BitRC2_CBC","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":1},{"label":null,"value":6}]}
+{"name":"id-pkcs12-bagtypes","gen_name":"id_pkcs12_bagtypes","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1}]}
+{"name":"id-pkcs12-keyBag","gen_name":"id_pkcs12_keyBag","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1},{"label":null,"value":1}]}
+{"name":"id-pkcs12-pkcs8ShroudedKeyBag","gen_name":"id_pkcs12_pkcs8ShroudedKeyBag","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1},{"label":null,"value":2}]}
+{"name":"id-pkcs12-certBag","gen_name":"id_pkcs12_certBag","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1},{"label":null,"value":3}]}
+{"name":"id-pkcs12-crlBag","gen_name":"id_pkcs12_crlBag","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1},{"label":null,"value":4}]}
+{"name":"id-pkcs12-secretBag","gen_name":"id_pkcs12_secretBag","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1},{"label":null,"value":5}]}
+{"name":"id-pkcs12-safeContentsBag","gen_name":"id_pkcs12_safeContentsBag","type":"OBJECT IDENTIFIER","constant":true,"exported":true,"value":[
+{"label":"iso","value":1},{"label":"member-body","value":2},{"label":"us","value":840},{"label":"rsadsi","value":113549},{"label":"pkcs","value":1},{"label":"pkcs-12","value":12},{"label":null,"value":10},{"label":null,"value":1},{"label":null,"value":6}]}
+{"name":"PKCS12_OctetString","gen_name":"PKCS12_OctetString","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_OctetString","gen_name":"PKCS12_OctetString","is_type":true,"exported":false,"typedef":true,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+{"module":"PKCS12","tagging":"explicit","objid":[]}
+{"name":"PKCS12_MacData","gen_name":"PKCS12_MacData","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_MacData","gen_name":"PKCS12_MacData","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct PKCS12_MacData","members":[
+{"name":"mac","gen_name":"mac","optional":false,"type":{"name":"PKCS12_MacData","gen_name":"mac","is_type":true,"exported":true,"typedef":false,"ttype":"DigestInfo","alias":true
+}
+},{"name":"macSalt","gen_name":"macSalt","optional":false,"type":{"name":"PKCS12_MacData","gen_name":"macSalt","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_MacData","gen_name":"macSalt","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+},{"name":"iterations","gen_name":"iterations","optional":true,"defval":null,"type":{"name":"PKCS12_MacData","gen_name":"*iterations","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_MacData","gen_name":"*iterations","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"heim_integer"}
+}
+}]}
+}
+{"name":"PKCS12_PFX","gen_name":"PKCS12_PFX","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_PFX","gen_name":"PKCS12_PFX","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct PKCS12_PFX","members":[
+{"name":"version","gen_name":"version","optional":false,"type":{"name":"PKCS12_PFX","gen_name":"version","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_PFX","gen_name":"version","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"heim_integer"}
+}
+},{"name":"authSafe","gen_name":"authSafe","optional":false,"type":{"name":"PKCS12_PFX","gen_name":"authSafe","is_type":true,"exported":true,"typedef":false,"ttype":"ContentInfo","alias":true
+}
+},{"name":"macData","gen_name":"macData","optional":true,"defval":null,"type":{"name":"PKCS12_PFX","gen_name":"*macData","is_type":true,"exported":true,"typedef":false,"ttype":"PKCS12_MacData","alias":true
+}
+}]}
+}
+{"name":"PKCS12_AuthenticatedSafe","gen_name":"PKCS12_AuthenticatedSafe","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_AuthenticatedSafe","gen_name":"PKCS12_AuthenticatedSafe","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct PKCS12_AuthenticatedSafe","members":[{"name":"PKCS12_AuthenticatedSafe","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"PKCS12_AuthenticatedSafe","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"ContentInfo","alias":true
+}
+]}
+}
+{"name":"PKCS12_Attribute","gen_name":"PKCS12_Attribute","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_Attribute","gen_name":"PKCS12_Attribute","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct PKCS12_Attribute","members":[
+{"name":"attrId","gen_name":"attrId","optional":false,"type":{"name":"PKCS12_Attribute","gen_name":"attrId","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_Attribute","gen_name":"attrId","is_type":true,"exported":false,"typedef":false,"ttype":"OBJECT IDENTIFIER","ctype":"heim_oid"}
+}
+},{"name":"attrValues","gen_name":"attrValues","optional":false,"type":{"name":"PKCS12_Attribute","gen_name":"attrValues","is_type":true,"exported":true,"typedef":false,"ttype":"HEIM_ANY_SET","alias":true
+}
+}]}
+}
+{"name":"PKCS12_Attributes","gen_name":"PKCS12_Attributes","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":17,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_Attributes","gen_name":"PKCS12_Attributes","is_type":true,"exported":false,"typedef":true,"ttype":"SET OF","ctype":"struct PKCS12_Attributes","members":[{"name":"PKCS12_Attributes","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"PKCS12_Attributes","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"PKCS12_Attribute","alias":true
+}
+]}
+}
+{"name":"PKCS12_SafeBag","gen_name":"PKCS12_SafeBag","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_SafeBag","gen_name":"PKCS12_SafeBag","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct PKCS12_SafeBag","members":[
+{"name":"bagId","gen_name":"bagId","optional":false,"type":{"name":"PKCS12_SafeBag","gen_name":"bagId","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_SafeBag","gen_name":"bagId","is_type":true,"exported":false,"typedef":false,"ttype":"OBJECT IDENTIFIER","ctype":"heim_oid"}
+}
+},{"name":"bagValue","gen_name":"bagValue","optional":false,"type":{"name":"PKCS12_SafeBag","gen_name":"bagValue","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_SafeBag","gen_name":"bagValue","is_type":true,"exported":true,"typedef":false,"ttype":"HEIM_ANY","alias":true
+}
+}
+},{"name":"bagAttributes","gen_name":"bagAttributes","optional":true,"defval":null,"type":{"name":"PKCS12_SafeBag","gen_name":"*bagAttributes","is_type":true,"exported":true,"typedef":false,"ttype":"PKCS12_Attributes","alias":true
+}
+}]}
+}
+{"name":"PKCS12_SafeContents","gen_name":"PKCS12_SafeContents","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_SafeContents","gen_name":"PKCS12_SafeContents","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE OF","ctype":"struct PKCS12_SafeContents","members":[{"name":"PKCS12_SafeContents","gen_name":"len","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+,{"name":"PKCS12_SafeContents","gen_name":"*val","is_type":true,"exported":true,"typedef":false,"ttype":"PKCS12_SafeBag","alias":true
+}
+]}
+}
+{"name":"PKCS12_CertBag","gen_name":"PKCS12_CertBag","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_CertBag","gen_name":"PKCS12_CertBag","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct PKCS12_CertBag","members":[
+{"name":"certType","gen_name":"certType","optional":false,"type":{"name":"PKCS12_CertBag","gen_name":"certType","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":6,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_CertBag","gen_name":"certType","is_type":true,"exported":false,"typedef":false,"ttype":"OBJECT IDENTIFIER","ctype":"heim_oid"}
+}
+},{"name":"certValue","gen_name":"certValue","optional":false,"type":{"name":"PKCS12_CertBag","gen_name":"certValue","is_type":true,"exported":false,"typedef":false,"tagclass":"CONTEXT","tagvalue":0,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_CertBag","gen_name":"certValue","is_type":true,"exported":true,"typedef":false,"ttype":"HEIM_ANY","alias":true
+}
+}
+}]}
+}
+{"name":"PKCS12_PBEParams","gen_name":"PKCS12_PBEParams","is_type":true,"exported":false,"typedef":true,"tagclass":"UNIVERSAL","tagvalue":16,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_PBEParams","gen_name":"PKCS12_PBEParams","is_type":true,"exported":false,"typedef":true,"ttype":"SEQUENCE","extensible":false,"ctype":"struct PKCS12_PBEParams","members":[
+{"name":"salt","gen_name":"salt","optional":false,"type":{"name":"PKCS12_PBEParams","gen_name":"salt","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":4,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_PBEParams","gen_name":"salt","is_type":true,"exported":false,"typedef":false,"ttype":"OCTET STRING","ctype":"heim_octet_string"}
+}
+},{"name":"iterations","gen_name":"iterations","optional":true,"defval":null,"type":{"name":"PKCS12_PBEParams","gen_name":"*iterations","is_type":true,"exported":false,"typedef":false,"tagclass":"UNIVERSAL","tagvalue":2,"tagenv":"EXPLICIT",
+"ttype":
+{"name":"PKCS12_PBEParams","gen_name":"*iterations","is_type":true,"exported":false,"typedef":false,"ttype":"INTEGER","ctype":"unsigned int"}
+}
+}]}
+}

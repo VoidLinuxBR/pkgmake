@@ -1,0 +1,44 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/bin/default/third_party/ngtcp2/lib/ngtcp2_rtb.c.2.o: \
+ ../../third_party/ngtcp2/lib/ngtcp2_rtb.c \
+ ../../third_party/ngtcp2/lib/ngtcp2_rtb.h include/config.h \
+ ../../third_party/ngtcp2/lib/includes/ngtcp2/ngtcp2.h \
+ third_party/ngtcp2/lib/includes/ngtcp2/version.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_pkt.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_ksl.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_objalloc.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_balloc.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_buf.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_opl.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_macro.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_mem.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_pq.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_pktns_id.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_conn.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_crypto.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_acktr.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_ringbuf.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_strm.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_rob.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_range.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_map.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_gaptr.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_idtr.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_str.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_log.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_cc.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_bbr.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_window_filter.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_pv.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_cid.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_path.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_pmtud.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_ppe.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_qlog.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_rst.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_conn_stat.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_dcidtr.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_vec.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_rcvry.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_unreachable.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_tstamp.h \
+ ../../third_party/ngtcp2/lib/ngtcp2_frame_chain.h

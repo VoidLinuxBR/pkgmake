@@ -1,0 +1,8 @@
+SAMBA_ERRORS_1.0.0 {
+	global:
+		*;
+	local:
+		_end;
+		__bss_start;
+		_edata;
+};

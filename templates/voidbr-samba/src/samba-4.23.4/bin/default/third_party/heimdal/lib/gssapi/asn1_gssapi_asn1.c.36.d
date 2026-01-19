@@ -1,0 +1,14 @@
+/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/bin/default/third_party/heimdal/lib/gssapi/asn1_gssapi_asn1.c.36.o: \
+ third_party/heimdal/lib/gssapi/asn1_gssapi_asn1.c \
+ ../../third_party/heimdal_build/include/krb5-types.h \
+ ../../lib/replace/replace.h ../../third_party/heimdal_build/config.h \
+ include/config.h ../../lib/replace/../replace/replace.h \
+ ../../source4/../lib/util/attr.h ../../lib/replace/system/network.h \
+ ../../lib/util/attr.h third_party/heimdal/lib/gssapi/gssapi_asn1.h \
+ ../../third_party/heimdal/lib/asn1/heim_asn1.h \
+ third_party/heimdal/lib/gssapi/gssapi_asn1-priv.h \
+ third_party/heimdal/lib/asn1/asn1_err.h \
+ ../../third_party/heimdal/lib/asn1/der.h \
+ third_party/heimdal/lib/asn1/der-protos.h \
+ ../../third_party/heimdal/lib/asn1/asn1-template.h \
+ ../../third_party/heimdal/lib/roken/parse_units.h

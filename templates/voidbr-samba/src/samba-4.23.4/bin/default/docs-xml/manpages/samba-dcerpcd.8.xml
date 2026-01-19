@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<refentry id="samba-dcerpcd.8">
+
+<refmeta>
+	<refentrytitle>samba-dcerpcd</refentrytitle>
+	<manvolnum>8</manvolnum>
+	<refmiscinfo class="source">Samba</refmiscinfo>
+	<refmiscinfo class="manual">System Administration tools</refmiscinfo>
+	<refmiscinfo class="version">4.23.4</refmiscinfo>
+</refmeta>
+
+
+<refnamediv>
+	<refname>samba-dcerpcd</refname>
+	<refpurpose>This is one of Samba's DCERPC server processes
+	that can listen on sockets where RPC services are offered and
+	is the parent process of the DCERPC services it
+	invokes. Unless separately invoked it is started on demand
+	from <literal>smbd</literal> or <literal>winbind</literal> and
+	serves DCERPC only over named pipes (np) as a helper
+	process. This will be the standard setup for most
+	installations (standalone/member server/AD server) unless they
+	modify their startup scripts. Note in when Samba is configured
+	as an Active Directory Domain controller the
+	<literal>samba</literal> process that invokes
+	<literal>smbd</literal> will still provide its normal DCERPC
+	services, not <literal>samba-dcerpcd</literal>. When
+	separately invoked by system startup scripts or a daemon,
+	the global smb.conf option <link xmlns:xlink="http://www.w3.org/1999/xlink" linkend="RPCSTARTONDEMANDHELPERS" xlink:href="smb.conf.5.html#RPCSTARTONDEMANDHELPERS">rpc start on  demand helpers = false</link> MUST be set to allow
+	<literal>samba-dcerpcd</literal> to start standalone.
+	</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+	<cmdsynopsis sepchar=" ">
+		<literal>samba-dcerpcd</literal>
+		<arg choice="opt" rep="norepeat">-D|--daemon</arg>
+		<arg choice="opt" rep="norepeat">-i|--interactive</arg>
+		<arg choice="opt" rep="norepeat">-F|--foreground</arg>
+		<arg choice="opt" rep="norepeat">--no-process-group</arg>
+		<arg choice="opt" rep="norepeat">-d &lt;debug level&gt;</arg>
+		<arg choice="opt" rep="norepeat">--debug-stdout</arg>
+		<arg choice="opt" rep="norepeat">--configfile=&lt;configuration file&gt;</arg>
+		<arg choice="opt" rep="norepeat">--option=&lt;name&gt;=&lt;value&gt;</arg>
+		<arg choice="opt" rep="norepeat">--leak-report</arg>
+		<arg choice="opt" rep="norepeat">--leak-report-full</arg>
+		<arg choice="opt" rep="norepeat">-V|--version</arg>
+		<arg choice="opt" rep="norepeat">--libexec-rpcds</arg>
+		<arg choice="opt" rep="norepeat">--np-helper</arg>
+		<arg choice="opt" rep="norepeat">--ready-signal-fd=&lt;fd&gt;</arg>
+		<arg choice="opt" rep="norepeat">&lt;SERVICE_1&gt;</arg>
+		<arg choice="opt" rep="norepeat">&lt;SERVICE_2&gt;</arg>
+		<arg choice="opt" rep="norepeat">&lt;...&gt;</arg>
+	</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+	<title>DESCRIPTION</title>
+
+	<para>This tool is part of the
+	<citerefentry><refentrytitle>samba</refentrytitle>
+	<manvolnum>7</manvolnum></citerefentry> suite.</para>
+
+	<para>
+	  samba-dcerpcd can be used in two ways. In the normal case
+	  without startup script modification and the global smb.conf
+	  option <link xmlns:xlink="http://www.w3.org/1999/xlink" linkend="RPCSTARTONDEMANDHELPERS" xlink:href="smb.conf.5.html#RPCSTARTONDEMANDHELPERS">rpc start on demand    helpers = true</link> is set (the default setting),
+	  it is invoked on demand from <literal>smbd</literal> or
+	  <literal>winbind</literal> with a command line
+	  containing --np-helper to serve DCERPC over named pipes
+	  (np). It can also be used in a standalone mode where it is
+	  started separately from <literal>smbd</literal> or
+	  <literal>winbind</literal> via system startup scripts. If
+	  invoked as a standalone daemon or started from system
+	  startup scripts the global smb.conf option <link xmlns:xlink="http://www.w3.org/1999/xlink" linkend="RPCSTARTONDEMANDHELPERS" xlink:href="smb.conf.5.html#RPCSTARTONDEMANDHELPERS">rpc start on demand helpers = false</link>
+	  MUST be set to false. If the global smb.conf option
+	  <link xmlns:xlink="http://www.w3.org/1999/xlink" linkend="RPCSTARTONDEMANDHELPERS" xlink:href="smb.conf.5.html#RPCSTARTONDEMANDHELPERS">rpc start on demand    helpers = true</link> is set to true or left as
+	  default, <literal>samba-dcerpcd</literal> will fail to start
+	  and log an error message.
+	</para>
+	<para>
+	  Note that when Samba is run in the Active Directory Domain
+	  Controller mode the <literal>samba</literal> AD code will
+	  still provide its normal DCERPC services whilst allowing
+	  samba-dcerpcd to provide services like SRVSVC in the same
+	  way that <literal>smbd</literal> used to in this
+	  configuration.
+	</para>
+	<para>
+	  The standalone mode can also be useful for use outside of
+	  the Samba framework, for example, use with the Linux kernel
+	  SMB2 server ksmbd or possibly other SMB2 server
+	  implementations. In this mode it behaves like inetd and
+	  listens on sockets on behalf of RPC server implementations.
+	</para>
+	<para>
+	  When a client connects, <literal>samba-dcerpcd</literal>
+	  will start the relevant RPC service binary on demand and
+	  hand over the connection to that service. When an RPC
+	  service has been idle for a while,
+	  <literal>samba-dcerpcd</literal> will ask it to shut down
+	  again.
+	</para>
+
+</refsect1>
+
+<refsect1>
+	<title>OPTIONS</title>
+
+	<variablelist>
+		<varlistentry>
+		<term>-D|--daemon</term>
+		<listitem><para>If specified, this parameter causes
+		the server to operate as a daemon. That is, it
+		detaches itself and runs in the background, fielding
+		requests on the appropriate port. Operating the server
+		as a daemon is useful for running
+		<literal>samba-dcerpcd</literal> outside of the Samba
+		framework. However, it can also be used in this way
+		within Samba for member servers if configured to start
+		up via system startup scripts.  This switch is assumed
+		if <literal>samba-dcerpcd</literal> is executed on the
+		command line of a shell.  </para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>-i|--interactive</term>
+		<listitem><para>If this parameter is specified it
+		causes the server to run "interactively", not as a
+		daemon, even if the server is executed on the command
+		line of a shell. Setting this parameter negates the
+		implicit daemon mode when run from the command
+		line. <literal>samba-dcerpcd</literal> will only
+		accept one connection and terminate. It will also log
+		to standard output, as if the <literal>-S</literal>
+		parameter had been given.
+		</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>-F|--foreground</term>
+		<listitem><para>If specified, this parameter causes
+		the main <literal>samba-dcerpcd</literal> process to
+		not daemonize, i.e. double-fork and disassociate with
+		the terminal.  Child processes are still spawned as
+		normal to service each connection request, but the
+		main process does not exit. This operation mode is
+		suitable for running <literal>samba-dcerpcd</literal>
+		under process supervisors such as
+		<literal>supervise</literal> and
+		<literal>svscan</literal> from Daniel J. Bernstein's
+		<literal>daemontools</literal> package, or the AIX
+		process monitor.  </para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--no-process-group</term>
+		<listitem><para>Do not create a new process group for
+		samba-dcerpcd.
+		</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--libexec-rpcds</term>
+		<listitem><para>Offer RPC services for all daemons in
+		Samba's LIBEXECDIR, all programs starting with
+		"rpcd_" are assumed to offer RPC
+		services. If you don't use the
+		<literal>--libexec-rpcds</literal> option, you can
+		explicitly list all RPC service helpers explicitly on
+		the command line.</para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--np-helper</term>
+		<listitem><para>Run <literal>samba-dcerpcd</literal>
+		on demand opening named pipe sockets as helpers for
+		<literal>smbd</literal> or <literal>winbind</literal>.
+		In order to run in this mode, the global smb.conf
+		option <link xmlns:xlink="http://www.w3.org/1999/xlink" linkend="RPCSTARTONDEMANDHELPERS" xlink:href="smb.conf.5.html#RPCSTARTONDEMANDHELPERS">rpc start on demand   helpers = true</link> must be set to true
+		(this is the default setting).  </para></listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term>--ready-signal-fd=&lt;fd&gt;</term>
+		<listitem><para>Report service readiness via this fd
+		to <literal>smbd</literal> or <literal>winbind</literal>.
+		Only for internal use.
+		</para></listitem>
+		</varlistentry>
+	</variablelist>
+</refsect1>
+
+<refsect1>
+	<title>AUTHOR</title>
+
+	<para>
+	  The original Samba software and related utilities were
+	  created by Andrew Tridgell. Samba is now developed by the
+	  Samba Team as an Open Source project similar to the way the
+	  Linux kernel is developed.
+	</para>
+</refsect1>
+
+</refentry>

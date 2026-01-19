@@ -1,0 +1,27 @@
+SAMBA_4.23.4_PRIVATE_SAMBA {
+	global:
+		pytalloc_*;
+		_pytalloc_*;
+		pytalloc_CObject_FromTallocPtr;
+		pytalloc_Check;
+		pytalloc_GetObjectType;
+		pytalloc_reference_ex;
+		pytalloc_steal;
+		pytalloc_steal_ex;
+		_pytalloc_get_mem_ctx;
+		_pytalloc_get_ptr;
+		_pytalloc_get_type;
+		pytalloc_BaseObject_PyType_Ready;
+		pytalloc_BaseObject_check;
+		pytalloc_BaseObject_size;
+		pytalloc_GetBaseObjectType;
+		_pytalloc_check_type;
+		pytalloc_GenericObject_reference_ex;
+		pytalloc_GenericObject_steal_ex;
+		_pytalloc_get_name;
+	local:
+		_end;
+		__bss_start;
+		_edata;
+		*;
+};
