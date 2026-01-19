@@ -178,6 +178,30 @@ package() {
     mkdir -p "$pkgdir"/etc/sv/samba-ad-dc/log
     {
         echo '#!/bin/sh'
+        echo
+        echo '# 1. Preparação da estrutura exigida pelo binário em /opt'
+        echo 'mkdir -p /opt/samba/var/locks/winbindd_privileged'
+        echo 'mkdir -p /opt/samba/var/lib/ntp_signd'
+        echo 'mkdir -p /opt/samba/var/run'
+        echo 'mkdir -p /run/samba'
+        echo
+        echo '# 2. Ajuste de permissões para garantir a criação dos sockets/pipes'
+        echo 'chown -R root:root /opt/samba/var/locks/winbindd_privileged'
+        echo 'chmod 750 /opt/samba/var/locks/winbindd_privileged'
+        echo
+        echo 'chown -R root:root /opt/samba/var/lib/ntp_signd'
+        echo 'chmod 750 /opt/samba/var/lib/ntp_signd'
+        echo
+        echo '# 3. Link simbólico para compatibilidade com ferramentas do sistema (wbinfo)'
+        echo 'if [ ! -L /var/lib/samba/winbindd_privileged ]; then'
+        echo '    mkdir -p /var/lib/samba'
+        echo '    ln -sf /opt/samba/var/locks/winbindd_privileged /var/lib/samba/winbindd_privileged'
+        echo 'fi'
+        echo
+        echo '# 4. Execução do Samba conforme sua especificação'
+        echo '# -i: modo interativo'
+        echo '# -M single: modelo de processo único'
+        echo '# --debuglevel=3: logs detalhados'
         echo 'exec /opt/samba/sbin/samba -i -M single --debuglevel=3 2>&1'
     } > "$pkgdir"/etc/sv/samba-ad-dc/run
     chmod +x "$pkgdir"/etc/sv/samba-ad-dc/run
