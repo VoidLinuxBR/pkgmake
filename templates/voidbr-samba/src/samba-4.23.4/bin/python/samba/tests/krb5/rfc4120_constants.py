@@ -1,1 +1,0 @@
-/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/python/samba/tests/krb5/rfc4120_constants.py

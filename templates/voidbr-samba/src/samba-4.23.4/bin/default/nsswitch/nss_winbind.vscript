@@ -1,8 +1,0 @@
-NSS_WINBIND_2 {
-	global:
-		*;
-	local:
-		_end;
-		__bss_start;
-		_edata;
-};

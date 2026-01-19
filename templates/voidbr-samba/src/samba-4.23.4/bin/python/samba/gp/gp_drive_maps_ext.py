@@ -1,1 +1,0 @@
-/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/python/samba/gp/gp_drive_maps_ext.py

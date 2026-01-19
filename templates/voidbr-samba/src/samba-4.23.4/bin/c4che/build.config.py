@@ -1,2 +1,0 @@
-version = 0x2010600
-tools = [{'tool': 'gnu_dirs', 'tooldir': [], 'funs': None}, {'tool': 'wafsamba', 'tooldir': [], 'funs': None}, {'tool': 'ar', 'tooldir': [], 'funs': None}, {'tool': 'c', 'tooldir': [], 'funs': None}, {'tool': 'gcc', 'tooldir': [], 'funs': None}, {'tool': 'compiler_c', 'tooldir': [], 'funs': None}, {'tool': 'gccdeps', 'tooldir': [], 'funs': None}, {'tool': 'perl', 'tooldir': [], 'funs': None}, {'tool': 'python', 'tooldir': [], 'funs': None}, {'tool': 'gnu_dirs', 'tooldir': [], 'funs': None}, {'tool': 'intltool', 'tooldir': [], 'funs': None}]

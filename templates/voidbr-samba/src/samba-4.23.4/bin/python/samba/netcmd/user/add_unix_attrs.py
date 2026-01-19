@@ -1,1 +1,0 @@
-/github/voidbr/pkgmake/templates/voidbr-samba/src/samba-4.23.4/python/samba/netcmd/user/add_unix_attrs.py

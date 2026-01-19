@@ -1,7 +1,0 @@
-ASN1_SYM_OID("id-pkcs9-extReq-copy", "id_pkcs9_extReq_copy", id_pkcs9_extReq_copy)
-ASN1_SYM_TYPE("CertificationRequestInfo", "CertificationRequestInfo", CertificationRequestInfo)
-ASN1_SYM_TYPE("CertificationRequest", "CertificationRequest", CertificationRequest)
-ASN1_SYM_TYPE("CRIAttributeSet", "CRIAttributeSet", CRIAttributeSet)
-ASN1_SYM_TYPE("IOSCertificationRequestInfo", "IOSCertificationRequestInfo", IOSCertificationRequestInfo)
-ASN1_SYM_TYPE("IOSCertificationRequest", "IOSCertificationRequest", IOSCertificationRequest)
-ASN1_SYM_TYPE("CRIExtensions", "CRIExtensions", CRIExtensions)
