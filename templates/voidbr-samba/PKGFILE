@@ -130,6 +130,8 @@ depends=(
     gnutls
     icu
     avahi
+    libgpgme
+    python-Markdown
 )
 
 build() {
