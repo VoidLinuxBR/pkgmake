@@ -174,4 +174,25 @@ package() {
     mkdir -p "$pkgdir/etc/profile.d/"
     echo 'export PATH=/opt/samba/bin:/opt/samba/sbin:$PATH' > "$pkgdir/etc/profile.d/voidbr-samba.sh"
     chmod +x "$pkgdir/etc/profile.d/voidbr-samba.sh"
+
+    mkdir -p "$pkgdir"/etc/sv/samba-ad-dc/log
+    {
+        echo '#!/bin/sh'
+        echo 'exec /opt/samba/sbin/samba -i -M single --debuglevel=3 2>&1'
+    } > "$pkgdir"/etc/sv/samba-ad-dc/run
+    chmod +x "$pkgdir"/etc/sv/samba-ad-dc/run
+
+    {
+        echo '#!/bin/sh'
+        echo 'exec svlogd -tt /var/log/samba-ad-dc'
+    } > "$pkgdir"/etc/sv/samba-ad-dc//log/run
+    chmod +x "$pkgdir"/etc/sv/samba-ad-dc/log/run
+
+    {
+        echo 'interface eth0'
+        echo 'static ip_address=192.168.70.253/24'
+        echo 'static routers=192.168.70.254'
+        echo 'static domain_name_servers=127.0.0.1 192.168.70.254'
+    } > "$pkgdir"/etc/dhcpcd.conf.samba
+
 }
