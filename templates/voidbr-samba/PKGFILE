@@ -131,7 +131,7 @@ depends=(
     icu
     avahi
     libgpgme
-    python-Markdown
+    python3-Markdown
 )
 
 build() {
