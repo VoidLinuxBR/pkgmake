@@ -132,6 +132,8 @@ depends=(
     avahi
     libgpgme
     python3-Markdown
+    mit-krb5
+    mit-krb5-client
 )
 
 build() {
