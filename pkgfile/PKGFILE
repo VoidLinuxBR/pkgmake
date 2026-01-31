@@ -19,6 +19,8 @@ depends=(
 	xbps
 	xbps-triggers
 	coreutils
+    ncurses
+    ncurses-devel
 )
 #conf_files=( /etc/pkgmake.conf /etc/vilmar.conf )
 backup=(/etc/pkgmake.conf)
