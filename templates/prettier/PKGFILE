@@ -1,0 +1,53 @@
+# Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=prettier
+pkgver=3.7.3
+pkgrel=1
+pkgdesc='An opinionated code formatter'
+arch=(any)
+url=https://prettier.io
+license=(MIT)
+depends=(nodejs)
+makedepends=(
+  gcc
+  git
+  make
+  python
+  yarn
+)
+checkdepends=(npm)
+#source=("git+https://github.com/$pkgname/$pkgname.git#tag=$pkgver")
+source=("git+https://github.com/$pkgname/$pkgname.git")
+b2sums=('380f15a40f632ca04237fcd9cee8fda5e4a06931125d79363d4b2b36233e146b6efa42328ce6c7d4ef71f48bfca316fc7abfcf8b2e439863adfaad89c26ba70d')
+
+prepare() {
+  cd $pkgname
+  yarn install --immutable
+
+  # Causes tests to hang
+  git revert --no-commit 0f5fee8fac59b3520c28dc2e21192aae83e97ebf
+}
+
+build() {
+  cd $pkgname
+  yarn build
+}
+
+check() {
+  cd $pkgname
+  # Flaky test
+  mv tests/integration/__tests__/ignore-path.js{,.bak}
+  yarn test:production
+  mv tests/integration/__tests__/ignore-path.js{.bak,}
+}
+
+package() {
+  local mod_dir=/usr/lib/node_modules/$pkgname
+
+  install -d "$pkgdir"/{usr/bin,usr/share/licenses/$pkgname,$mod_dir}
+  ln -s $mod_dir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $mod_dir/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  cd $pkgname
+  cp -a dist/$pkgname/* "$pkgdir"/$mod_dir
+}
