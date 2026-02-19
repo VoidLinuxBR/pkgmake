@@ -1,7 +1,7 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
 
 pkgname=google-chrome
-pkgver=145.0.7632.75
+pkgver=145.0.7632.109
 pkgrel=1
 pkgdesc="The popular web browser by Google (Stable Channel)"
 arch=('x86_64')
