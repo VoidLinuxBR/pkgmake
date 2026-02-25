@@ -1,0 +1,30 @@
+# Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=chili-nano-config
+pkgdesc="Custom nano configuration for ChiliLinux"
+optdepends=(git ncurses jq)
+provides=($pkgname biglinux-nano-config)
+conflicts=(biglinux-nano-config)
+replaces=(biglinux-nano-config)
+pkgver=$(date +%Y%m%d)
+pkgrel=$(date +%H%M)
+arch=('any')
+license=('MIT')
+url="https://github.com/chililinux/${pkgname}"
+source=("git+${url}.git")
+depends=(nano)
+md5sums=('SKIP')
+optdepends=()
+
+package() {
+   local dirs=("usr" "etc" "opt")
+#  echo "DESTDIR=$DESTDIR"
+#  echo "srcdir=$srcdir"
+#  echo "_pkgsrc=$_pkgsrc"
+
+   for dir in "${dirs[@]}"; do
+      if [ -d "${_pkgsrc}/${dir}" ]; then
+         cp -a "${_pkgsrc}/${dir}" "$DESTDIR/"
+      fi
+   done
+}

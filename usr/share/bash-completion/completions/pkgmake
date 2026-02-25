@@ -1,0 +1,103 @@
+# bash completion for pkgmake
+# clássico, portátil, sem dependências externas
+
+_pkgmake() {
+   local cur prev
+   COMPREPLY=()
+
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+   # -------------------------------------------------
+   # flags globais
+   # -------------------------------------------------
+   local global_flags="
+      -d --debug
+      -h --help
+      -V --version
+      -v --verbose
+      -s --sign
+      -i --install
+      -f --force
+      -s --syncdeps
+      -q --quiet
+      -v --verbose
+      -c --clean
+      -p --print-config
+      -k --pkgdest
+      -d --debug
+      -h --help
+      --sign-only
+      --reindex
+      --reindex-only
+      --reindex-all
+      --gen-key
+      --privkey
+      --dedup-repo
+   "
+
+   # -------------------------------------------------
+   # flags do comando new
+   # -------------------------------------------------
+   local new_flags="
+      --from-arch
+      --from-void
+      --from-voidlinuxbr
+      --from-venom
+   "
+
+   # -------------------------------------------------
+   # repos oficiais do Venom (FIXOS)
+   # -------------------------------------------------
+   local venom_repos="
+      core/
+      main/
+      multilib/
+      nonfree/
+      scripts/
+      testing/
+      archived/
+   "
+
+   # -------------------------------------------------
+   # primeira palavra: flags globais ou 'new'
+   # -------------------------------------------------
+   if (( COMP_CWORD == 1 )); then
+      COMPREPLY=( $(compgen -W "new $global_flags" -- "$cur") )
+      return 0
+   fi
+
+   # -------------------------------------------------
+   # se 'new' estiver presente em qualquer posição
+   # -------------------------------------------------
+   if [[ " ${COMP_WORDS[*]} " =~ [[:space:]]new[[:space:]] ]]; then
+
+      # logo após 'new' → flags do new
+      if [[ "$prev" == "new" ]]; then
+         COMPREPLY=( $(compgen -W "$new_flags" -- "$cur") )
+         return 0
+      fi
+
+      # digitando --from-*
+      if [[ "$cur" == --from-* ]]; then
+         COMPREPLY=( $(compgen -W "$new_flags" -- "$cur") )
+         return 0
+      fi
+
+      # --from-venom ativo → sugerir SOMENTE os repos
+      if [[ " ${COMP_WORDS[*]} " =~ [[:space:]]--from-venom[[:space:]] ]]; then
+         COMPREPLY=( $(compgen -W "$venom_repos" -- "$cur") )
+         return 0
+      fi
+
+      # nome de pacote é livre → não sugerir nada
+      return 0
+   fi
+
+   # -------------------------------------------------
+   # fallback: flags globais
+   # -------------------------------------------------
+   COMPREPLY=( $(compgen -W "$global_flags" -- "$cur") )
+}
+
+complete -F _pkgmake pkgmake

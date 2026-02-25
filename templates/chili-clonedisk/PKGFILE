@@ -1,0 +1,34 @@
+# Maintainer  : Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=chili-clonedisk
+pkgdesc="Utility for clone disk"
+pkgver=$(date +%Y%m%d)
+pkgrel=$(date +%H%M)
+arch=('any')
+license=('GPL3')
+url="https://github.com/chililinux/$pkgname"
+provides=("$pkgname")
+source=("git+${url}.git")
+md5sums=('SKIP')
+depends=(sed dialog grep ncurses gawk coreutils util-linux pv which )
+
+# Automatically detect and use the correct install file
+if [ -e "${pkgname}.install" ]; then
+   install=${pkgname}.install
+elif [ -e "pkgbuild.install" ]; then
+   install=pkgbuild.install
+fi
+
+package() {
+   local dirs=("usr" "etc" "opt")
+#   echo "DESTDIR=$DESTDIR"
+#   echo "pkgdir=$pkgdir"
+#   echo "srcdir=$srcdir"
+#   echo "_pkgsrc=$_pkgsrc"
+
+   for dir in "${dirs[@]}"; do
+      if [ -d "${_pkgsrc}/${dir}" ]; then
+         cp -a "${_pkgsrc}/${dir}" "$DESTDIR/"
+      fi
+   done
+}

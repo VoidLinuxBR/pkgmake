@@ -1,0 +1,29 @@
+# Template PKGFILE - instalação local Harbour
+# maintainer: Vilmar Catafesta <vcatafesta@gmail.com>"
+
+pkgname=harbour-bin
+pkgdesc="Harbour Compiler (xBase language)"
+pkgver=3.4
+pkgrel=5
+arch=('x86_64')
+license="GPL-2.0-only"
+depends="ncurses-libtinfo-devel slang libX11 gpm pcre2 zlib"
+homepage="https://harbour.github.io/"
+url="https://github.com/voidlinuxbr/${pkgname}"
+source=("git+${url}.git")
+md5sums=('SKIP')
+
+package() {
+   local dirs=("usr" "etc" "opt")
+   #   echo "DESTDIR=$DESTDIR"
+   #   echo "pkgdir=$pkgdir"
+   #   echo "srcdir=$srcdir"
+   #   echo "_pkgsrc=$_pkgsrc"
+
+   cd ${srcdir}/${pkgname}
+   for dir in "${dirs[@]}"; do
+      if [ -d "${_pkgsrc}/${dir}" ]; then
+         cp -a "${_pkgsrc}/${dir}" "$DESTDIR/"
+      fi
+   done
+}

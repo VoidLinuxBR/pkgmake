@@ -1,0 +1,49 @@
+#!/usr/bin/bash
+# Maintainer  : Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=pkgmake
+pkgdesc="makepkg-like tool for XBPS"
+pkgver=$(date +%Y%m%d)
+pkgrel=$(date +%H%M)
+arch=('any')
+license=('MIT')
+url="https://github.com/voidlinuxbr/$pkgname"
+provides=("$pkgname")
+source=("git+${url}.git")
+md5sums=('SKIP')
+depends=(
+	base-devel
+	bash
+	curl
+	git
+	xbps
+	xbps-triggers
+	coreutils
+)
+#conf_files=( /etc/pkgmake.conf /etc/vilmar.conf )
+backup=(/etc/pkgmake.conf)
+
+# Automatically detect and use the correct install file
+if [ -e "${pkgname}.install" ]; then
+	install=${pkgname}.install
+elif [ -e "pkgbuild.install" ]; then
+	install=pkgbuild.install
+fi
+
+package() {
+	local dirs=("usr" "etc" "opt")
+	#   echo "DESTDIR=$DESTDIR"
+	#   echo "pkgdir=$pkgdir"
+	#   echo "srcdir=$srcdir"
+	#   echo "_pkgsrc=$_pkgsrc"
+
+	cd ${srcdir}/${pkgname}
+	for dir in "${dirs[@]}"; do
+		if [ -d "${_pkgsrc}/${dir}" ]; then
+			cp -a "${_pkgsrc}/${dir}" "$DESTDIR/"
+		fi
+	done
+
+	#	install -Dm644 etc/pkgmake.conf $DESTDIR/etc/pkgmake.conf.new-${pkgver}-${pkgrel}
+	install -Dm644 etc/pkgmake.conf $DESTDIR/etc/pkgmake.conf.new
+}

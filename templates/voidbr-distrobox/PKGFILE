@@ -1,0 +1,29 @@
+# Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgbase=distrobox
+pkgname=voidbr-distrobox
+pkgver=1.8.2.3
+pkgrel=1
+pkgdesc="Use any linux distribution inside your terminal."
+url="https://distrobox.it"
+arch=('any')
+license=('GPL-3.0-only')
+depends=('bash' 'hicolor-icon-theme')
+optdepends=('docker: Docker support'
+	'podman: Podman support')
+source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/89luca89/distrobox/archive/${pkgver}.tar.gz")
+sha256sums=('b4fcc60c0b856aac93385ea0eb88fb27fdaeb00b365c75e0eed497c306069837')
+
+package() {
+	cd "${pkgbase}-${pkgver}"
+	env -i \
+		PATH="/usr/bin:/bin" \
+		HOME="$HOME" \
+		USER="$USER" \
+		LANG="${LANG:-C}" \
+		TERM="${TERM:-xterm}" \
+		./install -P "${pkgdir}/usr" >/dev/null 2>&1
+
+	env -i \
+		find docs -name "*.md" -exec install -Dm 644 -t "${pkgdir}/usr/share/doc/${pkgbase}" {} +
+}

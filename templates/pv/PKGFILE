@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=pv
+pkgver=1.10.3
+pkgrel=1
+pkgdesc='A terminal-based tool for monitoring the progress of data through a pipeline'
+arch=(x86_64)
+url="https://www.ivarch.com/programs/$pkgname.shtml"
+license=('GPL-3.0-or-later')
+depends=()
+source=("https://ivarch.com/s/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('aa1630c79af6960a8922ffa64d2c3e7f87486da21fcb57e277824294fd266742')
+
+build() {
+	cd "$wrksrc"
+	./configure --prefix=/usr
+	make -j$(nproc)
+}
+
+package() {
+	cd "$wrksrc"
+	make DESTDIR="$pkgdir" install
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" docs/COPYING
+}

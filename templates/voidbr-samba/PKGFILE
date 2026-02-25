@@ -1,0 +1,228 @@
+#!/usr/bin/env bash
+# Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=voidbr-samba
+pkgbase=samba
+pkgdesc="SMB/CIFS file, print, and login server for Unix"
+pkgver=4.23.4
+pkgrel=1
+arch=(x86_64)
+license=('GPL-3.0-or-later')
+url="https://www.samba.org"
+source=(https://download.samba.org/samba/ftp/stable/${pkgbase}-${pkgver}.tar.gz)
+makedepends=(
+	acl
+	attr
+	attr-devel
+	autoconf
+	automake
+	avahi
+	avahi-libs
+	base-devel
+	binutils
+	bind
+	bison
+	ccache
+	chrpath
+	cups-devel
+	curl
+	dateutils
+	dbus
+	dbus-devel
+	docbook-xml
+	docbook-xsl
+	flex
+	gcc
+	git
+	glib-devel
+	glusterfs
+	gnutls
+	gnutls-devel
+	gpgme-devel
+	htop
+	icu-devel
+	jansson
+	jansson-devel
+	ldns
+	libarchive-devel
+	libblkid-devel
+	libbsd
+	libbsd-devel
+	libcap
+	libcap-devel
+	libcups
+	libldap
+	libldap-devel
+	libnsl
+	libpcap-devel
+	libtasn1
+	libtasn1-devel
+	libtasn1-tools
+	libtirpc
+	libtirpc-devel
+	libunwind-devel
+	liburing
+	libuuid-devel
+	libxslt
+	linux-headers
+	lmdb
+	lmdb-devel
+	make
+	mit-krb5
+	mit-krb5-client
+	mit-krb5-devel
+	ncurses-devel
+	net-tools
+	pam
+	pam-devel
+	perl
+	perl-JSON
+	perl-Parse-Yapp
+	perl-Text-ParseWords
+	pkg-config
+	popt
+	popt-devel
+	python
+	python3
+	python3-cryptography
+	python3-devel
+	python3-dnspython
+	python3-matplotlib
+	python3-pexpect
+	python3-pyasn1
+	readline
+	readline-devel
+	rpcsvc-proto
+	rsync
+	talloc
+	tdb
+	tdb-devel
+	tevent
+	tree
+	vim
+	wget
+	xfsprogs-devel
+	zlib-devel
+	python3-devel
+	perl-Parse-Yapp
+	gperf
+	libtirpc-devel
+	linux-headers
+	gnutls-devel
+	jansson-devel
+	lmdb-devel
+	popt-devel
+	readline-devel
+	flex
+	bison
+	libxslt
+	docbook-xsl
+)
+depends=(
+    python3
+    python3-dnspython
+    python3-cryptography
+    python3-matplotlib
+    python3-pexpect
+    python3-pyasn1
+    ldb
+    libbsd
+    gnutls
+    icu
+    avahi
+    libgpgme
+    python3-Markdown
+    mit-krb5
+    mit-krb5-client
+)
+
+build() {
+	msg "Samba build (clean env, simulated shell)"
+	cd "$srcdir/$pkgbase-$pkgver"
+
+	env -i \
+		PATH="/usr/bin:/bin" \
+		HOME="$HOME" \
+		USER="$USER" \
+		LANG="${LANG:-C}" \
+		TERM="${TERM:-xterm}" \
+		./configure --prefix=/opt/samba ||
+		{
+			msg "configure falhou"
+			return 1
+		}
+
+	env -i \
+		PATH="/usr/bin:/bin" \
+		HOME="$HOME" \
+		USER="$USER" \
+		LANG="${LANG:-C}" \
+		TERM="${TERM:-xterm}" \
+		make -j$(nproc) ||
+		{
+			msg "make falhou"
+			return 1
+		}
+
+}
+
+package() {
+    cd "$srcdir/$pkgbase-$pkgver"
+    make DESTDIR="$pkgdir" install
+
+    mkdir -p "$pkgdir/opt/samba/var/lock/"
+    mkdir -p "$pkgdir/opt/samba/var/locks/"
+
+    mkdir -p "$pkgdir/etc/profile.d/"
+    echo 'export PATH=/opt/samba/bin:/opt/samba/sbin:$PATH' > "$pkgdir/etc/profile.d/voidbr-samba.sh"
+    chmod +x "$pkgdir/etc/profile.d/voidbr-samba.sh"
+
+    mkdir -p "$pkgdir"/etc/sv/samba-ad-dc/log
+    {
+        echo '#!/bin/sh'
+        echo
+        echo '# 1. Preparação da estrutura exigida pelo binário em /opt'
+        echo 'mkdir -p /opt/samba/var/locks/winbindd_privileged'
+        echo 'mkdir -p /opt/samba/var/lib/ntp_signd'
+        echo 'mkdir -p /opt/samba/var/run'
+        echo 'mkdir -p /run/samba'
+        echo
+        echo '# 2. Ajuste de permissões para garantir a criação dos sockets/pipes'
+        echo 'chown -R root:root /opt/samba/var/locks/winbindd_privileged'
+        echo 'chmod 750 /opt/samba/var/locks/winbindd_privileged'
+        echo
+        echo 'chown -R root:root /opt/samba/var/lib/ntp_signd'
+        echo 'chmod 750 /opt/samba/var/lib/ntp_signd'
+        echo
+        echo '# 3. Link simbólico para compatibilidade com ferramentas do sistema (wbinfo)'
+        echo 'if [ ! -L /var/lib/samba/winbindd_privileged ]; then'
+        echo '    mkdir -p /var/lib/samba'
+        echo '    ln -sf /opt/samba/var/locks/winbindd_privileged /var/lib/samba/winbindd_privileged'
+        echo 'fi'
+        echo
+        echo '# 4. Execução do Samba conforme sua especificação'
+        echo '# -i: modo interativo'
+        echo '# -M single: modelo de processo único'
+        echo '# --debuglevel=3: logs detalhados'
+        echo 'exec /opt/samba/sbin/samba -i -M single --debuglevel=3 2>&1'
+    } > "$pkgdir"/etc/sv/samba-ad-dc/run
+    chmod +x "$pkgdir"/etc/sv/samba-ad-dc/run
+
+    {
+        echo '#!/bin/sh'
+        echo '# Cria o diretório de destino se não existir'
+        echo '[ -d /var/log/samba-ad-dc ] || mkdir -p /var/log/samba-ad-dc'
+
+        echo '# Executa o svlogd apontando para o diretório de logs'
+        echo 'exec svlogd -tt /var/log/samba-ad-dc'
+    } > "$pkgdir"/etc/sv/samba-ad-dc//log/run
+    chmod +x "$pkgdir"/etc/sv/samba-ad-dc/log/run
+
+    {
+        echo 'interface eth0'
+        echo 'static ip_address=192.168.70.253/24'
+        echo 'static routers=192.168.70.254'
+        echo 'static domain_name_servers=127.0.0.1 192.168.70.254'
+    } > "$pkgdir"/etc/dhcpcd.conf.samba
+
+}

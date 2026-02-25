@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+# shellcheck shell=bash disable=SC1091,SC2039,SC2166
+# Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+
+pkgname=voidbr-change-gnome-wallpaper
+pkgdesc="Slideshow automático de wallpapers para GNOME (usa wallpapers já instalados)"
+pkgver=$(date +%Y%m%d)
+pkgrel=$(date +%H%M)
+arch=('any')
+license=('MIT')
+#url="ssh://git@github.com/chililinux/${pkgname}"
+url="https://github.com/voidlinuxbr/${pkgname}"
+source=("git+${url}.git")
+md5sums=('SKIP')
+depends=('bash' 'gnome-shell')
+
+# Automatically detect and use the correct install file
+if [ -e "${pkgname}.install" ]; then
+	install=${pkgname}.install
+elif [ -e "pkgbuild.install" ]; then
+	install=pkgbuild.install
+fi
+
+package() {
+	local dirs=("usr" "etc" "opt")
+	#   echo "DESTDIR=$DESTDIR"
+	#   echo "srcdir=$srcdir"
+	#   echo "_pkgsrc=$_pkgsrc"
+
+	for dir in "${dirs[@]}"; do
+		if [ -d "${_pkgsrc}/${dir}" ]; then
+			cp -a "${_pkgsrc}/${dir}" "$DESTDIR/"
+		fi
+	done
+}

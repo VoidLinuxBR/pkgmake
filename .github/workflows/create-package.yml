@@ -1,0 +1,59 @@
+name: Build with voidbr-pkgmake
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+  workflow_dispatch: # Permite a execução manual do workflow
+    inputs:
+      debug_enabled: # Input para habilitar o modo de depuração
+        type: boolean
+        description: "With TMATE"
+        required: false
+        default: false
+
+  #  schedule:  # Executa automaticamente toda sexta-feira às 05:00
+  #    - cron: '0 5 * * 5'
+
+  repository_dispatch: # Permite a execução através de eventos de webhook
+    types:
+      - webhook
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DEBUG: true
+      TERM: xterm
+    # 2. Subir container VoidLinux e instalar tmate
+    container:
+      image: vcatafesta/voidlinux-docker:1.5 #seg 16 fev 2026 23:52:08 -04
+      options: -v ${{ github.workspace }}:/workspace --privileged
+    steps:
+      - name: update
+        run: |
+          xbps-install -Syu xbps
+          xbps-install --update --yes tmate openssh git
+
+      # 3. Iniciar sessão tmate imediatamente dentro do container
+      - name: Setup TMATE Session in CONTAINER
+        uses: mxschmitt/action-tmate@v3
+        if: env.DEBUG == 'true'
+        with:
+          install-dependencies: false
+          detached: true
+
+      # 1. Checkout do próprio repositório
+      - name: Checkout do repositório atual
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Checkout de outro repositório
+        run: |
+          cd /workspace
+          git clone --depth 1 https://github.com/vcatafesta/gitrepo.git
+          cd gitrepo/pkgfile
+          pkgmake -s
