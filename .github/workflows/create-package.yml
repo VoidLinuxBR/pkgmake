@@ -72,8 +72,12 @@ jobs:
       - name: Create private.pem
         shell: bash
         run: |
+          mkdir -p $HOME/.ssh
           echo "$PKGMAKE_PRIVATE_KEY" > $HOME/.ssh/private.pem
           echo "$PKGMAKE_PRIVATE_KEY" > $HOME/.ssh/privkey.pem
+          chmod 700 /root/.ssh
+          chmod 600 /root/.ssh/private.pem
+          chmod 600 /root/.ssh/privkey.pem
 
       - name: Create .chili-make-repo.conf
         shell: bash
