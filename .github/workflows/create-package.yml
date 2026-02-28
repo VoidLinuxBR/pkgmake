@@ -17,6 +17,10 @@ on:
         description: "Empacotador"
         required: true
         default: "Vilmar Catafesta <vcatafesta@gmail.com>"
+      package:
+        type: string
+        description: "Pacote para construir"
+        required: true
 
   #  schedule:  # Executa automaticamente toda sexta-feira às 05:00
   #    - cron: '0 5 * * 5'
@@ -68,10 +72,11 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Checkout de outro repositório
+      - name: Checkout do pacote recebido
         uses: actions/checkout@v4
         with:
-          repository: vcatafesta/gitrepo
+          repository: voidlinuxbr/${{ github.event.client_payload.package }}
+          token: ${{ secrets.ORGANIZATION_TOKEN }}
           fetch-depth: 1
           path: gitrepo
 
