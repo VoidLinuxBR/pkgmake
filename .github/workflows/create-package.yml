@@ -75,6 +75,22 @@ jobs:
           echo "$PKGMAKE_PRIVATE_KEY" > $HOME/.ssh/private.pem
           echo "$PKGMAKE_PRIVATE_KEY" > $HOME/.ssh/privkey.pem
 
+      - name: Create .chili-make-repo.conf
+        shell: bash
+        run: |
+          {
+            echo "[void]"
+            echo "GPGKEY=A0D5A8312A83940ED8B04B0F4BAC871802E960F1"
+            echo "SECRETKEY=lg63771588@"
+            echo "local_PATH=/github/ChiliOS/RepoChililinux/void/current"
+            echo "remote_HOST=repo.chililinux.com"
+            echo "remote_USER=u537062342"
+            echo "remote_PATH=/home/u537062342/domains/chililinux.com/public_html/void/current"
+            echo "remote_PORT=65002"
+            echo "PACKAGER='Vilmar Catafesta <gmail.com>'"
+            echo "prefix_DB=void"
+          } > $HOME/.chili-make-repo.conf
+
       - name: Build pkg
         shell: bash
         run: |
