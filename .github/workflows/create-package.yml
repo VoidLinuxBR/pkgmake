@@ -83,6 +83,7 @@ jobs:
           chmod 600 $HOME/.ssh/id_rsa
           ssh-keygen -y -f $HOME/.ssh/id_rsa > $HOME/.ssh/id_rsa.pub || true
           ssh-keygen -l -f $HOME/.ssh/id_rsa || true
+          touch $HOME/.ssh/known_hosts || true
           ssh-keyscan -p ${{ secrets.SERVER_PORT }}      -H ${{ secrets.SERVER_HOST }}      >> $HOME/.ssh/known_hosts" || true
           ssh-keyscan -p ${{ secrets.TS_VOIDREPO_PORT }} -H ${{ secrets.TS_VOIDREPO_HOST }} >> $HOME/.ssh/known_hosts" || true
 
