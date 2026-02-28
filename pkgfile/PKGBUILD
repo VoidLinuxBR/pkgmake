@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # Maintainer  : Vilmar Catafesta <vcatafesta@gmail.com>
 
-pkgname=pkgmake
+pkgname=voidbr-pkgmake
 pkgdesc="makepkg-like tool for XBPS"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
