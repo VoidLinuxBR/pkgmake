@@ -75,7 +75,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-000000000000000000000000000000000000000000000000000000000000000000
+
       - name: Checkout do pacote recebido
         uses: actions/checkout@v4
         with:
