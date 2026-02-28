@@ -52,7 +52,7 @@ jobs:
       - name: update
         run: |
           xbps-install -Syu xbps
-          xbps-install --update --yes voidbr-pkgmake tmate openssh git
+          xbps-install --update --yes voidbr-pkgmake void-utils tmate openssh git
           vinstall -Scc
 
       # 3. Iniciar sessão tmate imediatamente dentro do container
