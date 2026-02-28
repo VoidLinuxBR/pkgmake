@@ -1,8 +1,8 @@
 name: Build with voidbr-pkgmake
 
 on:
-#  push:
-#    branches: ["main"]
+  #  push:
+  #    branches: ["main"]
   pull_request:
 
   workflow_dispatch: # Permite a execução manual do workflow
@@ -11,7 +11,7 @@ on:
         type: boolean
         description: "With TMATE"
         required: false
-        default: false
+        default: true
       packager:
         type: string
         description: "Empacotador"
@@ -43,7 +43,7 @@ env:
   TS_VOIDREPO_PORT: "${{ secrets.TS_VOIDREPO_PORT }}"
   PKGMAKE_PRIVATE_KEY: "${{ secrets.PKGMAKE_PRIVATE_KEY }}"
   PKGMAKE_PACKAGER: "${{ github.event.client_payload.packager || inputs.packager || 'Vilmar Catafesta <vvcatafesta@gmail.com>' }}"
-  DEBUG: "${{ github.event.client_payload.tmate || inputs.tmate || false }}"
+  DEBUG: "${{ github.event.client_payload.tmate || inputs.tmate || true }}"
 
 jobs:
   build:
