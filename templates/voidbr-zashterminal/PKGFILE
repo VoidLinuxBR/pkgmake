@@ -26,6 +26,7 @@ build() {
 }
 
 package() {
+	local dirs=("usr" "etc" "opt")
 	cd "${srcdir}/$pkgbase"
 
 	python -m installer --destdir="$pkgdir" dist/*.whl
@@ -34,6 +35,12 @@ package() {
 		mkdir -p "$pkgdir/usr"
 		cp -ra usr/share "$pkgdir/usr/"
 	fi
+
+	for dir in "${dirs[@]}"; do
+		if [ -d "${_pkgsrc}/${dir}" ]; then
+			cp -a "${_pkgsrc}/${dir}" "$DESTDIR/"
+		fi
+	done
 
 	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 	install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
