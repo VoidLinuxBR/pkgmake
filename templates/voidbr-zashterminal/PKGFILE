@@ -75,15 +75,15 @@ post_install() {
   # ------------------------------------------------------
 
 	log() {
-    echo "[$(date +%H:%M:%S)] ${CYAN}[*]${RESET} $pkgname - $*"
+    echo "${CYAN}[*]${RESET} $pkgname - $*"
 	}
 
 	warn() {
-		echo "[$(date +%H:%M:%S)] WARNING: ${CYAN}[*]${RESET} $pkgname - $*" >&2
+    echo "${YELLOW}[*]WARNING: ${RESET} $pkgname - $*" >&2
 	}
 
 	die() {
-		echo "[$(date +%H:%M:%S)] ERROR: ${CYAN}[*]${RESET} $pkgname - $*" >&2
+    echo "${YELLOW}[*]FATAL: ${RESET} $pkgname - $*" >&2
 		exit 1
 	}
 
