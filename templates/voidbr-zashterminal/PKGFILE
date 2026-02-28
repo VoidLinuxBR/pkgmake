@@ -47,7 +47,7 @@ package() {
 }
 
 post_install() {
-	PACKAGE_NAME="zashterminal"
+	PACKAGE_NAME="voidbr-zashterminal"
 	DESKTOP_ID="org.leoberbert.zashterminal"
 	REPO_URL="https://github.com/leoberbert/zashterminal.git"
 	INSTALL_ROOT="/opt/${PACKAGE_NAME}"

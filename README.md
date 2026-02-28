@@ -33,10 +33,10 @@ DOWNLOAD E INSTALAÇÃO
 
 ```bash
 # Clone o repositório
-git clone --depth=1 https://github.com/voidlinuxbr/pkgmake.git
+git clone --depth=1 https://github.com/voidlinuxbr/voidbr-pkgmake.git
 
 # entre no diretório
-cd pkgmake
+cd voidbr-pkgmake
 
 # Instale via Makefile
 sudo make install
@@ -59,12 +59,12 @@ Instalação rápida executando o script diretamente do GitHub.
 
 #### Usando curl
 ```sh
-curl -fsSL https://raw.githubusercontent.com/voidlinuxbr/pkgmake/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/voidlinuxbr/voidbr-pkgmake/main/install.sh | sudo bash
 ```
 
 #### Usando wget
 ```sh
-wget -qO- https://raw.githubusercontent.com/voidlinuxbr/pkgmake/main/install.sh | sudo bash
+wget -qO- https://raw.githubusercontent.com/voidlinuxbr/voidbr-pkgmake/main/install.sh | sudo bash
 ```
 
 Este método:
@@ -98,7 +98,7 @@ sudo xbps-install -S
 Instale o pacote:
 
 ```sh
-sudo xbps-install pkgmake
+sudo xbps-install voidbr-pkgmake
 ```
 
 Após a instalação, o comando `pkgmake` estará disponível em `/usr/bin/pkgmake`.
@@ -111,7 +111,7 @@ Este método:
 ### 4. Execução manual do instalador (alternativa)
 
 ```sh
-wget https://raw.githubusercontent.com/voidlinuxbr/pkgmake/main/install.sh
+wget https://raw.githubusercontent.com/voidlinuxbr/voidbr-pkgmake/main/install.sh
 chmod +x install.sh
 sudo ./install.sh
 ```
