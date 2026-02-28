@@ -87,51 +87,54 @@ jobs:
       - name: Create private.pem
         shell: bash
         run: |
-          rm -rf "$HOME/.ssh"
-          rm -rf "/root/.ssh"
-          mkdir -p "$HOME/.ssh"
-          mkdir -p "/root/.ssh"
+          local cpath=('/root', "$HOME")
+          local x
 
-          {
-            echo "Host repo"
-            echo "  HostName $SERVER_HOST"
-            echo "  Port $SERVER_PORT"
-            echo "  User $SERVER_USER"
-            echo "  IdentityFile ~/.ssh/id_rsa"
-            echo "  IdentitiesOnly yes"
-          }  > "/root/.ssh/config"
+          for dir in "${cpath[@]}"; do
+            rm -rf "$dir/.ssh"
+            mkdir -p "$dir/.ssh"
 
-          echo "$PKGMAKE_PRIVATE_KEY" > "$HOME/.ssh/private.pem"
-          echo "$PKGMAKE_PRIVATE_KEY" > "$HOME/.ssh/privkey.pem"
-          chmod 700 "$HOME/.ssh"
-          chmod 600 "$HOME/.ssh/private.pem"
-          chmod 600 "$HOME/.ssh/privkey.pem"
+            {
+              echo "Host repo"
+              echo "  HostName $SERVER_HOST"
+              echo "  Port $SERVER_PORT"
+              echo "  User $SERVER_USER"
+              echo "  IdentityFile ~/.ssh/id_rsa"
+              echo "  IdentitiesOnly yes"
+            }  > "$dir/.ssh/config"
 
-          printf '%s\n' "$SSH_PRIVATE_KEY" > "/root/.ssh/id_rsa"
-          chmod 700 "/root/.ssh"
-          chmod 600 "/root/.ssh/id_rsa"
-          chmod 600 "/root/.ssh/config"
-
-          ssh-keygen -y -f "/root/.ssh/id_rsa" > "/root/.ssh/id_rsa.pub" || true
-          ssh-keygen -l -f "/root/.ssh/id_rsa" || true
-          ssh-keyscan -p "$SERVER_PORT"      -H "$SERVER_HOST"      >> "/root/.ssh/known_hosts" 2>/dev/null || true
-          ssh-keyscan -p "$TS_VOIDREPO_PORT" -H "$TS_VOIDREPO_HOST" >> "/root/.ssh/known_hosts" 2>/dev/null || true
+            echo "$PKGMAKE_PRIVATE_KEY" > "$dir/.ssh/private.pem"
+            echo "$PKGMAKE_PRIVATE_KEY" > "$dir/.ssh/privkey.pem"
+            printf '%s\n' "$SSH_PRIVATE_KEY" > "$dir/.ssh/id_rsa"
+            chmod 700 "$dir/.ssh"
+            chmod 600 "$dir/.ssh/private.pem"
+            chmod 600 "$dir/.ssh/privkey.pem"
+            chmod 600 "$dir/.ssh/id_rsa"
+            ssh-keygen -y -f "$dir/.ssh/id_rsa" > "$dir/.ssh/id_rsa.pub" || true
+            ssh-keyscan -p "$SERVER_PORT"      -H "$SERVER_HOST"      >> "$dir/.ssh/known_hosts" 2>/dev/null || true
+            ssh-keyscan -p "$TS_VOIDREPO_PORT" -H "$TS_VOIDREPO_HOST" >> "$dir/.ssh/known_hosts" 2>/dev/null || true
+          done
 
       - name: Create .chili-make-repo.conf
         shell: bash
         run: |
-          {
-            echo "[void]"
-            echo "GPGKEY=A0D5A8312A83940ED8B04B0F4BAC871802E960F1"
-            echo "SECRETKEY=lg63771588@"
-            echo "local_PATH=$HOME/repodir"
-            echo "remote_HOST=$SERVER_HOST"
-            echo "remote_USER=$SERVER_USER"
-            echo "remote_PATH=/home/$SERVER_USER/domains/chililinux.com/public_html/void/current"
-            echo "remote_PORT=$SERVER_PORT"
-            echo "PACKAGER='Vilmar Catafesta <gmail.com>'"
-            echo "prefix_DB=void"
-          } > "$HOME/.chili-make-repo.conf"
+          local cpath=('/root', "$HOME")
+          local x
+
+          for dir in "${cpath[@]}"; do
+            {
+              echo "[void]"
+              echo "GPGKEY=A0D5A8312A83940ED8B04B0F4BAC871802E960F1"
+              echo "SECRETKEY=lg63771588@"
+              echo "local_PATH=$HOME/repodir"
+              echo "remote_HOST=$SERVER_HOST"
+              echo "remote_USER=$SERVER_USER"
+              echo "remote_PATH=/home/$SERVER_USER/domains/chililinux.com/public_html/void/current"
+              echo "remote_PORT=$SERVER_PORT"
+              echo "PACKAGER='Vilmar Catafesta <gmail.com>'"
+              echo "prefix_DB=void"
+            } > "$dir/.chili-make-repo.conf"
+          done
 
       - name: Build pkg
         shell: bash
