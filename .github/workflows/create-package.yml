@@ -1,8 +1,8 @@
 name: Build with voidbr-pkgmake
 
 on:
-  push:
-    branches: ["main"]
+#  push:
+#    branches: ["main"]
   pull_request:
 
   workflow_dispatch: # Permite a execução manual do workflow
@@ -87,9 +87,7 @@ jobs:
       - name: Create private.pem
         shell: bash
         run: |
-          local cpath=('/root', "$HOME")
-          local x
-
+          cpath=('/root', "$HOME")
           for dir in "${cpath[@]}"; do
             rm -rf "$dir/.ssh"
             mkdir -p "$dir/.ssh"
@@ -118,9 +116,7 @@ jobs:
       - name: Create .chili-make-repo.conf
         shell: bash
         run: |
-          local cpath=('/root', "$HOME")
-          local x
-
+          cpath=('/root', "$HOME")
           for dir in "${cpath[@]}"; do
             {
               echo "[void]"
