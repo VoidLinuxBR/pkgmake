@@ -48,7 +48,6 @@ jobs:
           install-dependencies: false
           detached: true
 
-      # 1. Checkout do próprio repositório
       - name: Checkout do repositório atual
         uses: actions/checkout@v4
         with:

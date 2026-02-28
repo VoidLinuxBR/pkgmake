@@ -79,6 +79,9 @@ KEY_FILE="privkey.pem"
 PKGDEST=""
 CLI_PKGDEST=""
 
+PACKAGER=""
+CLI_PACKAGER=""
+
 REINDEX_FORCE="${REINDEX_FORCE:-0}"
 CLI_REINDEX=
 REINDEX_ONLY=0
@@ -617,6 +620,14 @@ validate_pkgdest_sanity() {
 	case "$PKGDEST" in
 	*::* | *"//"*)
 		die "PKGDEST inválido: $PKGDEST"
+		;;
+	esac
+}
+
+validate_packager_sanity() {
+	case "$PACKAGER" in
+	*::* | *"//"*)
+		die "PACKAGER inválido: $PACKAGER"
 		;;
 	esac
 }
@@ -1385,6 +1396,7 @@ ${bold}Opções:${reset}
   ${green}-c|--clean${reset}                       Limpar diretórios de trabalho
   ${green}-p|--print-config${reset}                Imprimir configuracao do /etc/pkgmake.conf
   ${green}-k|--pkgdest${reset} ${yellow}<path>${reset}              Diretório local onde os pacotes (.xbps) e o repodata serão gerados
+  ${green}  |--packager${reset} ${yellow}<nome>${reset}             Nome Empacotador
   ${green}new ${yellow}<pacote>${reset}                     Criar esqueleto básico de PKGFILE
   ${green}new --from-arch ${yellow}<pacote>${reset}         Importar PKGBUILD do Arch/AUR (requer revisão manual)
   ${green}new --from-voidlinuxbr ${yellow}<pacote>${reset}  Importar template de pacote da Comunidade VoidLinuxBR (requer revisão manual)
@@ -1588,6 +1600,22 @@ resolve_pkgdest() {
 	[[ -w "$dest" ]] || die "sem permissão de escrita em PKGDEST: $dest"
 
 	PKGDEST="$dest"
+}
+
+resolve_packager() {
+	local packager
+
+	if [[ -n "$CLI_PACKAGER" ]]; then
+		packager="$CLI_PACKAGER"
+	elif [[ -n "$PACKAGER" ]]; then
+		packager="$PACKAGER"
+	else
+		die "PACKAGER não definido (use --packager ou /etc/pkgmake.conf)"
+	fi
+
+	validate_packager_sanity
+
+	PACKAGER="$packager"
 }
 
 resolve_signpkg() {
@@ -1796,6 +1824,10 @@ while [[ $# -gt 0 ]]; do
 		CLI_PKGDEST="$2"
 		shift 2
 		;;
+	--packager)
+		CLI_PACKAGER="$2"
+		shift 2
+		;;
 	-h | --help)
 		usage
 		exit 0
@@ -1842,6 +1874,7 @@ resolve_syncdeps
 resolve_signpkg
 resolve_verbose
 resolve_pkgdest # blindagem de path + permissão (ANTES de tudo)
+resolve_packager
 load_pkgfile
 sanitize_pkgfile_vars
 resolve_sources
