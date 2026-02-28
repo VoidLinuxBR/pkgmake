@@ -79,4 +79,6 @@ jobs:
         shell: bash
         run: |
           cd gitrepo/pkgfile
-          pkgmake -s --packager "$PKGMAKE_PACKAGER"
+          if pkgmake -s --packager "$PKGMAKE_PACKAGER"; then
+            chili-make-repo -A void
+          fi
