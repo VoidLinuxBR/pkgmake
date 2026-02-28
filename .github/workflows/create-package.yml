@@ -7,7 +7,7 @@ on:
 
   workflow_dispatch: # Permite a execução manual do workflow
     inputs:
-      debug_enabled: # Input para habilitar o modo de depuração
+      tmate: # Input para habilitar o modo de depuração
         type: boolean
         description: "With TMATE"
         required: false
