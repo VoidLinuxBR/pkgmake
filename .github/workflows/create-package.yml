@@ -132,6 +132,7 @@ jobs:
       - name: Build pkg
         shell: bash
         run: |
+          cp -Rpva /root/. $HOME/.
           cd pkgmake/pkgfile
           pkgmake -s --packager "$PKGMAKE_PACKAGER"
 
