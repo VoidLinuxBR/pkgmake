@@ -109,11 +109,12 @@ jobs:
             chmod 600 "$cdir/.ssh/privkey.pem"
             chmod 600 "$cdir/.ssh/id_rsa"
             ssh-keygen -y -f "$cdir/.ssh/id_rsa" > "$cdir/.ssh/id_rsa.pub" || true
-            rm "$cdir/.ssh/known_hosts" || true
-            ssh-keyscan -p "$SERVER_PORT"      "repo.chililinux.com" "$SERVER_HOST" >> "$cdir/.ssh/known_hosts" 2>/dev/null || true
-            ssh-keyscan -p "$TS_VOIDREPO_PORT" "$TS_VOIDREPO_HOST" >> "$cdir/.ssh/known_hosts" 2>/dev/null || true
-            chmod 600 "$cdir/.ssh/known_hosts" || true
           done
+          rm "$cdir/.ssh/known_hosts" || true
+          ssh-keyscan -p "$SERVER_PORT" repo.chililinux.com >> /root/.ssh/known_hosts
+          ssh-keyscan -p "$SERVER_PORT" 147.93.38.151 >> /root/.ssh/known_hosts
+          ssh-keyscan -p "$TS_VOIDREPO_PORT" "$TS_VOIDREPO_HOST" >> "/root/.ssh/known_hosts" 2>/dev/null || true
+          chmod 600 "/root/.ssh/known_hosts" || true
 
       - name: Create .chili-make-repo.conf
         shell: bash
